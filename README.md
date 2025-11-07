@@ -3,7 +3,7 @@
   <img src="assets/hermes-wire-logo.png" alt="HERMES-WIRE logo: Hermes with DNA and gut bacteria" width="320">
 </p>
 
-HERMES-WIRE (<b>HER</b>itable <b>M</b>icrobiom<b>E</b> <b>S</b>tructure — <b>W</b>orkflow for <b>I</b>nterpreting host–microbiome <b>R</b>elationships &amp; <b>E</b>ffects) is a modular suite of Nextflow pipelines that fuse cost-effective quantitative genetics with systems biology to map how host polygenic variation wires gut microbial community structure and model their causal impacts on metabolic health.
+<b><p style="font-size: 120%;">HERMES-WIRE</p></b> (<b><p style="font-size: 120%;">HER</p></b>itable <b><p style="font-size: 120%;">M</p></b>icrobiom<b><p style="font-size: 120%;">E</p></b> <b><p style="font-size: 120%;">S</p></b>tructure — <b><p style="font-size: 120%;">W</p></b>orkflow for <b><p style="font-size: 120%;">I</b>nterpreting host–microbiome <b><p style="font-size: 120%;">R</p></b>elationships &amp; <b><p style="font-size: 120%;">E</p></b>ffects) is a modular suite of Nextflow pipelines that fuse cost-effective quantitative genetics with systems biology to map how host polygenic variation wires gut microbial community structure and model their causal impacts on metabolic health.
 
 ## <b>STEPS:</b>
 
