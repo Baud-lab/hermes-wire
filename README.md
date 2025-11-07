@@ -1,4 +1,15 @@
-# <b>HERMES-WIRE</b> (<b>HER</b>itable <b>M</b>icrobiom<b>E</b> <b>S</b>tructure — <b>W</b>orkflow for <b>I</b>nterpreting host–microbiome <b>R</b>elationships &amp; <b>E</b>ffects)
+<p align="center" style="font-weight:400; font-size:16px;">
+  <b style="font-size:18px;">HERMES-WIRE</b> 
+  (<b style="font-size:18px;">HER</b>itable 
+  <b style="font-size:18px;">M</b>icrobiom
+  <b style="font-size:18px;">E</b> 
+  <b style="font-size:18px;">S</b>tructure — 
+  <b style="font-size:18px;">W</b>orkflow for 
+  <b style="font-size:18px;">I</b>nterpreting host–microbiome 
+  <b style="font-size:18px;">R</b>elationships &amp; 
+  <b style="font-size:18px;">E</b>ffects)
+</p>
+
 
 <p align="center">
   <img src="assets/hermes-wire-logo.png" alt="HERMES-WIRE logo: Hermes with DNA and gut bacteria" width="320">
