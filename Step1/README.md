@@ -71,19 +71,7 @@ The pipeline depends on two large pre-computed indices hosted on <b>Zenodo</b>:
 | **Taxonomic**  | GTDB R207 protein catalogue for Kaiju (`gtdb_index.fmi`)                        | [https://zenodo.org/uploads/17545483](https://zenodo.org/uploads/17545483) |
 | **Functional** | IFGP (IBM Functional Genomics Platform) index for PRROMenade (`bactvirus2020*`) | [https://zenodo.org/uploads/17545032](https://zenodo.org/uploads/17545032) |
 
-Download and extract both archives into `input/indices/`:
-
-```bash
-cd input/indices/
-
-# Taxonomic index
-wget https://zenodo.org/uploads/17545483 -O GTDB207_kaiju_index.tar.gz
-tar -xvzf GTDB207_kaiju_index.tar.gz -C ./kaiju/
-
-# Functional index
-wget https://zenodo.org/uploads/17545032 -O IFGP_prromenade_index.tar.gz
-tar -xvzf IFGP_prromenade_index.tar.gz -C ./prromenade/
-```
+Download and extract both archives into `input/indices/` using commands ```wget``` and ```tar -xvzf```, respectivelly.
 
 ---
 
@@ -176,6 +164,7 @@ We acknowledge the support of the <b>Bioinformatics Core Facility at CRG</b>.
 Distributed under the <b>MIT License</b>.
 
 ---
+
 
 
 
