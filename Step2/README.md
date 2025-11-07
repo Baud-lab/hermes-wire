@@ -66,8 +66,8 @@ Templates are available under the <code>parameters/</code> folder:
 | ---------------------------------------------- | ----------------------------------------------------- | ---------------------------------------------- |
 | **Shallow Full Taxonomic**                     | Standard run using taxonomic profiles from Step 1     | `parameters/full_shallow/params_shallow_taxonomic.yaml`     |
 | **Shallow Full Functional**                    | Standard run using functional profiles (EC tables)    | `parameters/full_shallow/params_shallow_functional.yaml`    |
-| **Shallow ↔ 16S Harmonization (full)**         | Joint taxonomic harmonization between Shallow and 16S | `parameters/comparative/params_<shallow or 16S>_full_harm.yaml`    |
-| **Shallow ↔ 16S Harmonization (samples only)** | Only harmonizes shared samples between datasets       | `parameters/comparative/params_<shallow or 16S>_sample_harm.yaml` |
+| **Shallow ↔ 16S Harmonization (full)**         | Comparisons between Shallow and 16S with samples and taxa harmonised | `parameters/comparative/params_<shallow or 16S>_full_harm.yaml`    |
+| **Shallow ↔ 16S Harmonization (samples only)** | Comparisons between Shallow and 16S with only samples harmonised       | `parameters/comparative/params_<shallow or 16S>_sample_harm.yaml` |
 
 Each YAML file defines all modules (Matrix Processing, Clusters, Networks, Enterotypes, Heritability, GWAS) and their parameters.
 
@@ -176,4 +176,5 @@ We acknowledge the support of the <b>CRG HPC Core Facility</b> and the Genetics 
 Distributed under the <b>MIT License</b>.
 
 ---
+
 
