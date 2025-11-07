@@ -1,14 +1,39 @@
-🧬 HERMES-WIRE — Step 1: Data Pre-processing and Microbiome Profiling
-Centre for Genomic Regulation (CRG), Barcelona — 2025
-Authors: Felipe Morillo Sanz Dias, Luca Cozzuto, Hélène Tonnele, Amelie Baud
-📘 Overview
-HERMES-WIRE Step 1 is the first stage of the HERMES-WIRE (HERitable MicrobiomE Structure) workflow, designed to perform read-level pre-processing and microbiome profiling from shallow-shotgun or metagenomic sequencing data.
-It provides an automated and reproducible Nextflow pipeline for:
-Pre-processing of raw reads (QC, trimming, host read removal).
-Taxonomic profiling using Kaiju and a GTDB-based protein index.
-Functional profiling using PRROMenade and the IBM Functional Genomics Platform (IFGP) reference catalogue.
-This step produces non-host filtered reads, taxonomic abundance tables, functional EC tables, and summary reports (MultiQC).
-⚙️ Pipeline structure
+Perfect — here’s your **fully formatted HTML/Markdown hybrid `README.md`** for `hermes-wire/Step1`, harmonised with the main HERMES-WIRE style you already use in the root README.
+It preserves the same visual structure, HTML blocks, and rich formatting conventions, so it will render beautifully on GitHub.
+
+---
+
+```markdown
+# 🧬 HERMES-WIRE — Step 1: Data Pre-processing and Microbiome Profiling
+
+<p align="center">
+  <img src="../assets/hermes-wire-logo.png" alt="HERMES-WIRE logo: Hermes with DNA and gut bacteria" width="300">
+</p>
+
+<b>Centre for Genomic Regulation (CRG), Barcelona — 2025</b>  
+<b>Authors:</b> Felipe Morillo Sanz Dias, Luca Cozzuto, Hélène Tonnele, Amelie Baud  
+
+---
+
+## <b>📘 Overview</b>
+
+<b>HERMES-WIRE Step 1</b> is the first stage of the <b>HERMES-WIRE</b> (<b>HER</b>itable <b>M</b>icrobiom<b>E</b> <b>S</b>tructure) workflow.  
+It performs read-level pre-processing and microbiome profiling from shallow-shotgun or metagenomic sequencing data.
+
+This automated and reproducible Nextflow pipeline executes:
+
+1. <b>Pre-processing</b> of raw reads (QC, trimming, host-read removal).  
+2. <b>Taxonomic profiling</b> using Kaiju and a GTDB-based protein index.  
+3. <b>Functional profiling</b> using PRROMenade and the IBM Functional Genomics Platform (IFGP) reference catalogue.  
+
+It produces non-host filtered reads, taxonomic abundance tables, functional EC tables, and MultiQC reports.
+
+---
+
+## <b>⚙️ Pipeline structure</b>
+
+```
+
 Step1/
 ├── bin/                     # Auxiliary scripts and binaries
 ├── cmd                      # Command template
@@ -24,21 +49,41 @@ Step1/
 ├── tool_opt.tsv             # Tool-specific parameter definitions
 ├── submit_nf.sh             # Example SLURM submission script
 └── work/                    # Nextflow working directory (auto-generated)
-🚀 Quick start
-1. Install dependencies
+
+````
+
+---
+
+## <b>🚀 Quick start</b>
+
+### <b>1. Install dependencies</b>
+
 You’ll need:
-Nextflow ≥ 23.10
-Singularity or Apptainer (for container execution)
-HPC or Unix environment with SLURM (optional)
+
+- **Nextflow ≥ 23.10**  
+- **Singularity or Apptainer** (for container execution)  
+- **HPC or Unix environment** with SLURM (optional)
+
+```bash
 # Load Nextflow and Singularity
 module load Nextflow
 module load Singularity
-2. Download required reference indices
-The pipeline depends on two large pre-computed indices hosted on Zenodo:
-Profiling type	Description	Zenodo link
-Taxonomic	GTDB R207 protein catalogue for Kaiju (gtdb_index.fmi)	https://zenodo.org/uploads/17545483
-Functional	IFGP (IBM Functional Genomics Platform) index for PRROMenade (bactvirus2020*)	https://zenodo.org/uploads/17545032
-Download and extract both archives into the input/indices/ directory:
+````
+
+---
+
+### <b>2. Download required reference indices</b>
+
+The pipeline depends on two large pre-computed indices hosted on <b>Zenodo</b>:
+
+| Profiling type | Description                                                                     | Zenodo link                                                                |
+| -------------- | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| **Taxonomic**  | GTDB R207 protein catalogue for Kaiju (`gtdb_index.fmi`)                        | [https://zenodo.org/uploads/17545483](https://zenodo.org/uploads/17545483) |
+| **Functional** | IFGP (IBM Functional Genomics Platform) index for PRROMenade (`bactvirus2020*`) | [https://zenodo.org/uploads/17545032](https://zenodo.org/uploads/17545032) |
+
+Download and extract both archives into `input/indices/`:
+
+```bash
 cd input/indices/
 
 # Taxonomic index
@@ -48,9 +93,15 @@ tar -xvzf GTDB207_kaiju_index.tar.gz -C ./kaiju/
 # Functional index
 wget https://zenodo.org/uploads/17545032 -O IFGP_prromenade_index.tar.gz
 tar -xvzf IFGP_prromenade_index.tar.gz -C ./prromenade/
-3. Configure parameters
-Edit params.yaml to specify your dataset paths and options.
-Example:
+```
+
+---
+
+### <b>3. Configure parameters</b>
+
+Edit <b>`params.yaml`</b> to specify your dataset paths and options:
+
+```yaml
 module_preprocessing: "YES"
 module_taxonomic_mapping: "YES"
 module_functional_mapping: "YES"
@@ -69,19 +120,38 @@ functional_file_index: "./input/indices/prromenade/bactvirus2020*"
 functional_file_ec: "./input/indices/prromenade/taxid_name.txt"
 
 output_folder: "./Results_Step1/"
-4. Run the pipeline
-Execute:
+```
+
+---
+
+### <b>4. Run the pipeline</b>
+
+```bash
 nextflow run main.nf -params-file params.yaml -profile singularity
-or via SLURM using the provided submission script:
+```
+
+Or submit through SLURM:
+
+```bash
 sbatch submit_nf.sh
-🧩 Modules
-Module	Description	Tools used
-Pre-processing	Quality control, trimming, host read removal	FastQC, Trimmomatic, Bowtie2, Samtools
-Taxonomic profiling	Protein-level classification against GTDB index	Kaiju, custom parsers
-Functional profiling	Functional annotation via PRROMenade	PRROMenade, IFGP index
-Reporting	QC summary and statistics	MultiQC, custom R scripts
-📂 Output structure
-Results are organized as follows:
+```
+
+---
+
+## <b>🧩 Modules</b>
+
+| Module                   | Description                                     | Tools used                             |
+| ------------------------ | ----------------------------------------------- | -------------------------------------- |
+| **Pre-processing**       | Quality control, trimming, host-read removal    | FastQC, Trimmomatic, Bowtie2, Samtools |
+| **Taxonomic profiling**  | Protein-level classification against GTDB index | Kaiju, custom parsers                  |
+| **Functional profiling** | Functional annotation via PRROMenade            | PRROMenade, IFGP index                 |
+| **Reporting**            | QC summary and statistics                       | MultiQC, custom R scripts              |
+
+---
+
+## <b>📂 Output structure</b>
+
+```
 Results_Step1/
 ├── Non_Host/                 # Reads without host contamination
 ├── Counts_Taxonomic/         # Kaiju count tables (taxonomic)
@@ -89,15 +159,39 @@ Results_Step1/
 ├── Reports_Taxonomic/        # MultiQC and summary reports (taxonomic)
 ├── Reports_Functional/       # MultiQC and summary reports (functional)
 └── pipeline_info/            # Logs and Nextflow reports
-🧠 Citation
+```
+
+---
+
+## <b>🧠 Citation</b>
+
 If you use this workflow or its pre-computed indices, please cite:
-Morillo FMSD, Cozzuto L, Tonnele H, Baud A (2025).
-HERMES-WIRE: HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects.
-Centre for Genomic Regulation (CRG), Barcelona.
-https://github.com/Baud-lab/hermes-wire
-🧩 Acknowledgements
-This pipeline was developed under the Baud Lab at the Centre for Genomic Regulation (CRG) and Universitat Pompeu Fabra (UPF).
-We acknowledge the support of the HPC Core Facility at CRG.
-🧾 License
+
+> Morillo FMSD, Cozzuto L, Tonnele H, Baud A (2025). <i>HERMES-WIRE: HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects.</i>
+> Centre for Genomic Regulation (CRG), Barcelona.
+> [https://github.com/Baud-lab/hermes-wire](https://github.com/Baud-lab/hermes-wire)
+
+---
+
+## <b>🧩 Acknowledgements</b>
+
+Developed under the <b>Baud Lab</b> at the <b>Centre for Genomic Regulation (CRG)</b> and <b>Universitat Pompeu Fabra (UPF)</b>.
+We acknowledge the support of the <b>HPC Core Facility at CRG</b>.
+
+---
+
+## <b>🧾 License</b>
+
 © 2025 Centre for Genomic Regulation (CRG) and the authors.
-Distributed under the MIT License.
+Distributed under the <b>MIT License</b>.
+
+---
+
+<p align="center">
+  <sub><i>Part of the HERMES-WIRE Nextflow suite for host–microbiome systems genetics analyses.</i></sub>
+</p>
+```
+
+---
+
+Would you like me to **add a minimal Mermaid flow diagram** (matching the one from your thesis figure pipeline) showing the three main branches (Pre-processing → Taxonomic → Functional → Reports)? It integrates well right below the “📘 Overview” section.
