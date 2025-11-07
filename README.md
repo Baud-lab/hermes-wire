@@ -20,7 +20,7 @@
 
 ---
 
-## 🧩 <b>Pipeline Overview</b>
+## 📘 <b>Pipeline Overview</b>
 
 HERMES-WIRE consists of **four modular steps**, each of which can be run independently or sequentially.  
 Together they provide a full *host–microbiome systems genetics* framework — from raw reads to host–microbiome causal inference.
