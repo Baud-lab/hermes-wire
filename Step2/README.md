@@ -7,7 +7,7 @@
 
 ## <b>📘 Overview</b>
 
-<b>HERMES-WIRE Step 2</b> is the second module of the <b>HERMES-WIRE</b> suite (<b>HER</b>itable <b>M</b>icrobiom<b>E</b> <b>S</b>tructure — <b>W</b>orkflow for <b>I</b>nterpreting host–microbiome <b>R</b>elationships &amp; <b>E</b>ffects).
+<b>HERMES-WIRE Step 2</b> is the second stage of the <b>HERMES-WIRE</b> suite (<b>HER</b>itable <b>M</b>icrobiom<b>E</b> <b>S</b>tructure — <b>W</b>orkflow for <b>I</b>nterpreting host–microbiome <b>R</b>elationships &amp; <b>E</b>ffects).
 
 It integrates processed microbiome profiles (taxonomic or functional) and performs downstream analyses, including:
 
@@ -64,10 +64,10 @@ Templates are available under the <code>parameters/</code> folder:
 
 | Configuration                                  | Purpose                                               | YAML file                                      |
 | ---------------------------------------------- | ----------------------------------------------------- | ---------------------------------------------- |
-| **Shallow Full Taxonomic**                     | Standard run using taxonomic profiles from Step 1     | `parameters/params_shallow_taxonomic.yaml`     |
-| **Shallow Full Functional**                    | Standard run using functional profiles (EC tables)    | `parameters/params_shallow_functional.yaml`    |
-| **Shallow ↔ 16S Harmonization (full)**         | Joint taxonomic harmonization between Shallow and 16S | `parameters/params_harmonization_full.yaml`    |
-| **Shallow ↔ 16S Harmonization (samples only)** | Only harmonizes shared samples between datasets       | `parameters/params_harmonization_samples.yaml` |
+| **Shallow Full Taxonomic**                     | Standard run using taxonomic profiles from Step 1     | `parameters/full_shallow/params_shallow_taxonomic.yaml`     |
+| **Shallow Full Functional**                    | Standard run using functional profiles (EC tables)    | `parameters/full_shallow/params_shallow_functional.yaml`    |
+| **Shallow ↔ 16S Harmonization (full)**         | Joint taxonomic harmonization between Shallow and 16S | `parameters/comparative/params_<shallow or 16S>_full_harm.yaml`    |
+| **Shallow ↔ 16S Harmonization (samples only)** | Only harmonizes shared samples between datasets       | `parameters/comparative/params_<shallow or 16S>_sample_harm.yaml` |
 
 Each YAML file defines all modules (Matrix Processing, Clusters, Networks, Enterotypes, Heritability, GWAS) and their parameters.
 
@@ -176,3 +176,4 @@ We acknowledge the support of the <b>CRG HPC Core Facility</b> and the Genetics 
 Distributed under the <b>MIT License</b>.
 
 ---
+
