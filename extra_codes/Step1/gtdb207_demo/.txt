@@ -1,1 +1,0 @@
-gtdb_id	ncbi_id

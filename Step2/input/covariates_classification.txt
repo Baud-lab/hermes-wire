@@ -1,0 +1,11 @@
+covariate	classification
+Sex	categorical
+Fasted	categorical
+Material	categorical
+Batch	categorical
+Prep	categorical
+Weaning_Suite	categorical
+Study	categorical
+Alpha	continuous
+Depth	continuous
+Depth_16S	continuous

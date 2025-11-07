@@ -1,0 +1,14 @@
+Feb-22 16:37:11.012 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf -params-file params_shallow.yaml -profile crg -bg -w /nfs/scratch01/abaud/fmorillo/Nextflow/Microbiome_profiling/work_shallow -with-tower
+Feb-22 16:37:11.174 [main] INFO  nextflow.cli.CmdRun - N E X T F L O W  ~  version 23.10.1
+Feb-22 16:37:11.249 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/users/abaud/fmorillo/.nextflow/plugins; core-plugins: nf-amazon@2.1.4,nf-azure@1.3.3,nf-cloudcache@0.3.0,nf-codecommit@0.1.5,nf-console@1.0.6,nf-ga4gh@1.1.0,nf-google@1.8.3,nf-tower@1.6.3,nf-wave@1.0.1
+Feb-22 16:37:11.283 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+Feb-22 16:37:11.286 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+Feb-22 16:37:11.293 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.4.1 in 'deployment' mode
+Feb-22 16:37:11.317 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+Feb-22 16:37:11.424 [main] DEBUG nextflow.scm.ProviderConfig - Using SCM config path: /users/abaud/fmorillo/.nextflow/scm
+Feb-22 16:37:11.454 [main] DEBUG nextflow.cli.Launcher - Operation aborted
+nextflow.exception.AbortOperationException: Cannot find script file: main.nf
+	at nextflow.cli.CmdRun.getScriptFile(CmdRun.groovy:466)
+	at nextflow.cli.CmdRun.run(CmdRun.groovy:317)
+	at nextflow.cli.Launcher.run(Launcher.groovy:500)
+	at nextflow.cli.Launcher.main(Launcher.groovy:672)

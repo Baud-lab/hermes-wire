@@ -1,0 +1,107 @@
+# Parameters of the HERMES-WIRE Step 2 Pipeline
+
+## STEP 2: Profile matrix processing and analyses
+
+### Modules
+module_analysis: "Pooled"
+module_profile: "Taxonomic"
+module_comparisons: "NO"
+module_matrix_processing: "YES"
+module_cluster: "YES"
+module_network: "YES"
+module_enterotype: "YES"
+module_alpha_diversity: "YES"
+module_beta_diversity: "YES"
+module_heritability: "YES"
+module_gwas: "NO"
+
+### Profile: Taxonomic
+taxonomic_file_taxonomy:  "./input/taxonomy_GTDB207.txt"
+taxonomic_file_phylotree:  "./input/phylotree_GTDB207.tree"
+taxonomic_parameter_ranks: "Phylum,Class,Order,Family,Genus,Species" ### Order from the highest to the lowest
+
+### Profile: Functional
+functional_parameter_ranks: "EC1,EC2,EC3,EC4" ### Order from the highest to the lowest level
+functional_tax_sample_filter: "YES"
+functional_tax_defined_samples_and_enterotypes: "./input/tax_defined.csv"
+
+### Module: Comparisons - Harmonization for comparisons with another dataset (i.e. 16S data)
+harmonization_file_secondary_counts_table: "./input/out_table_16S_taxonomic.biom" # Download it from https://qiita.ucsd.edu/analysis/description/57950/ (ID: 175568)
+harmonization_file_secondary_taxonomy:  "./input/taxonomy_Greengenes2.txt"
+harmonization_parameter_secondary_min_initial_depth: 0
+harmonization_parameter_secondary_min_final_depth: 6000
+harmonization_parameter_methods: "Shallow,16S" ### Keep the target method used for the analyses as the first.
+harmonization_parameter_taxa_harmonization: "NO"
+harmonization_parameter_hybrid_matrix: "NO"
+harmonization_parameter_hybrid_matrix_proportion_of_main: 1
+
+### Module: Matrix processing
+processing_file_counts_table: "./input/norm_matrix.txt" # Copy the results from Step 1
+processing_file_remove_ids:   "./input/remove_ids_Shallow.txt"
+processing_file_metadata:     "./input/metadata_Shallow.txt"
+processing_file_library:      "./input/statistics.txt" # Copy the results from Step 1
+processing_file_covariates:   "./input/covariates_Shallow.txt"
+processing_file_cov_types:    "./input/covariates_classification.txt"
+processing_parameter_sample_identifier:  "host_subject_id"
+processing_parameter_host_identifier:  "RFID"
+processing_parameter_min_initial_depth: 0
+processing_parameter_min_abundance: 0.0001
+processing_parameter_min_final_depth:  30000
+processing_parameter_min_prevalence:      0.5
+processing_parameter_sample_material: "Cecal" ### Required for host genetic analyses and comparisons between two methods (i.e. Shallow vs 16S)
+processing_parameter_method: "Shallow"
+
+### Modules: Alpha and Beta Diversity
+diversity_parameter_type: "TD,PD" # TD for "Taxonomic diversity" or "neutral" and PD for "Phylogenetic Diversity"
+diversity_parameter_alpha_hill_number: "0,1,2"
+diversity_parameter_alpha_nboot:   50
+diversity_parameter_alpha_conf:    0.95
+
+### Module: Clusters
+cluster_parameter_number_of_neighbors: 30
+cluster_parameter_minimum_distance: 0.05
+cluster_parameter_number_of_components: 20
+cluster_parameter_metric_umap: "cosine"
+cluster_parameter_metric_hdb: "euclidean"
+cluster_parameter_minimum_cluster_size: 15
+cluster_parameter_minimum_samples: 10
+cluster_parameter_epsilon: 0.01
+cluster_parameter_target_DBCV: 0.5
+cluster_parameter_target_ARI: 0.6
+cluster_parameter_taxa_harmonization: "NO"
+
+### Module: Enterotypes
+enterotypes_parameter_rank_name: "Genus"
+enterotypes_parameter_kmax: 5
+enterotypes_parameter_nstart: 25
+
+### Module: Network
+network_parameter_measure: "bicor"
+network_parameter_outliers: "0.05"
+network_parameter_threshold: "0.25"
+network_parameter_alpha: "0.05"
+network_parameter_cluster_method: "cluster_walktrap"
+network_parameter_hub_definition: "betweenness,eigenvector"
+
+### Modules: Overall Host Genetic Effects Analyses
+genetic_file_h5: "" # Include the output file containing the traits if you plan to skip module matrix processing
+genetic_file_gen_info: "./input/P50_rats_Rn7.h5" # Download it from https://zenodo.org/records/17546688 and unzip
+genetic_parameter_effects_null:  "cageEffect,maternalEffect" ### cageEffect and/or maternalEffect"
+genetic_parameter_effects_full:  "DGE" ### DGE for "Direct genetic effecs"
+
+### Module: Heritability
+heritability_file_prev: "" # Include the output file containing the traits if you plan to skip module matrix processing
+heritability_file_catalogue_stats: "./input/catalogue_stats.csv"
+heritability_parameter_kinship: "P50_Rn7_pruned"
+heritability_parameter_significance_fdr: 0.10
+heritability_parameter_significance_bonferroni:  0.05
+
+### Module: GWAS
+gwas_file_residuals: "./Output_Shallow/Matrix_Processing/filtered_clr_counts.RData"
+gwas_parameter_dosage_field:  "direct_unpruned_Rn7" 
+gwas_parameter_kinship_loco:  "P50_Rn7_pruned"
+gwas_parameter_significance_logp: 5.8
+gwas_parameter_min_logp:  4
+
+### Output folder
+output_folder: "./Results_Taxonomic/"

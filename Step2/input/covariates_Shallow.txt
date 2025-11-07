@@ -1,0 +1,4 @@
+subset_id	covariates
+MI	Sex,Batch
+NY	Sex,Batch
+ALL	Sex,Batch,Study
