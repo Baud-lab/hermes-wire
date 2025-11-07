@@ -198,6 +198,3 @@ We acknowledge support from the <b>Bioinformatics Core Facility</b> and the <b>C
 Distributed under the <b>MIT License</b>.
 
 ---
-
-Would you like me to now create a **matching Mermaid diagram** for this *main README* (showing all four steps in sequence, with submodules branching from each)?
-It would fit perfectly right under “🧩 Pipeline Overview”.
