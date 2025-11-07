@@ -1,9 +1,15 @@
-# HERMES-WIRE
+# 🧬 <b>HERMES-WIRE</b> (<b>HER</b>itable <b>M</b>icrobiom<b>E</b> <b>S</b>tructure — <b>W</b>orkflow for <b>I</b>nterpreting host–microbiome <b>R</b>elationships &amp; <b>E</b>ffects)
+
 <p align="center">
   <img src="assets/hermes-wire-logo.png" alt="HERMES-WIRE logo: Hermes with DNA and gut bacteria" width="320">
 </p>
 
-<b>HERMES-WIRE</b> (<b>HER</b>itable <b>M</b>icrobiom<b>E</b> <b>S</b>tructure — <b>W</b>orkflow for <b>I</b>nterpreting host–microbiome <b>R</b>elationships &amp; <b>E</b>ffects) is a modular suite of Nextflow pipelines that fuse cost-effective quantitative genetics with systems biology to map how host polygenic variation wires gut microbial community structure and model their causal impacts on metabolic health.
+A modular suite of Nextflow pipelines that fuse cost-effective quantitative genetics with systems biology to map how host polygenic variation wires gut microbial community structure and model their causal impacts on metabolic health.
+
+<b>Centre for Genomic Regulation (CRG), Barcelona — 2025</b>  
+<b>Authors:</b> Felipe Morillo Sanz Dias, Luca Cozzuto, Hélène Tonnele, Amelie Baud  
+
+---
 
 ## <b>STEPS:</b>
 
@@ -169,3 +175,29 @@ Log-off and Log-in.
 Then launch the pipeline using `-with-tower` as an argument for the command line above. You just need to set the token once, and then you can use Tower every time you run a pipeline.
 
 You can then follow the results going to link indicated when executing the pipeline in your log file (in the case of SLURM users the submit_nf.sh file will generate files with names starting with “slurm” on the corresponding step directory).
+
+---
+
+## <b>🧠 Citation</b>
+
+If you use this workflow or its pre-computed indices, please cite:
+
+> Morillo FMSD, Cozzuto L, Tonnele H, Baud A (2025). <i>HERMES-WIRE: HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects.</i>
+> Centre for Genomic Regulation (CRG), Barcelona.
+> [https://github.com/Baud-lab/hermes-wire](https://github.com/Baud-lab/hermes-wire)
+
+---
+
+## <b>🧩 Acknowledgements</b>
+
+Developed under the <b>Baud Lab</b> at the <b>Centre for Genomic Regulation (CRG)</b> and <b>Universitat Pompeu Fabra (UPF)</b>.
+We acknowledge the support of the <b>Bioinformatics Core Facility at CRG</b>.
+
+---
+
+## <b>🧾 License</b>
+
+© 2025 Centre for Genomic Regulation (CRG) and the authors.
+Distributed under the <b>MIT License</b>.
+
+---
