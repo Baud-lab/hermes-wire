@@ -5,47 +5,47 @@
 
 HERMES-WIRE (<b>HER</b>itable <b>M</b>icrobiom<b>E</b> <b>S</b>tructure — <b>W</b>orkflow for <b>I</b>nterpreting host–microbiome <b>R</b>elationships &amp; <b>E</b>ffects) is a modular suite of Nextflow pipelines that fuse cost-effective quantitative genetics with systems biology to map how host polygenic variation wires gut microbial community structure and model their causal impacts on metabolic health.
 
-<b>STEPS:</b>
+##<b>STEPS:</b>
 
-<b>Step 1: Mapping bacterial taxa and/or functions</b>
-# Objective: To maximise microbiome profiling sensitivity from shallow-shotgun data, while using broad reference catalogues.
-# Main stages:
+###<b>Step 1: Mapping bacterial taxa and/or functions</b>
+#### Objective: To maximise microbiome profiling sensitivity from shallow-shotgun data, while using broad reference catalogues.
+#### Main stages:
 1. Data processing: Trimming and removal of host reads;
 2. Taxonomic profiling: Alignment with a reference catalogue and read counting (Species-Phylum);
 3. Functional profiling: Alignment with a reference catalogue and read counting (EC4-EC1);
 
-<b>Step 2: Microbiome characterisation</b>
-# Objectives: To minimise the risks of mapping false positives and characterise the microbiome at different levels.
-# Main stages:
+###<b>Step 2: Microbiome characterisation</b>
+#### Objectives: To minimise the risks of mapping false positives and characterise the microbiome at different levels.
+#### Main stages:
 1. Matrix processing: Sample and taxa filtering, aggregation to higher taxonomic/functional levels, data transformation, rank-normalisation and residualisation (removal of fixed-effects)
 2. Analyses: Co-abundance guilds, alpha- and beta-diversity, enterotypes and networks
 3. Heritability tests
 
-<b>Step 3: Bacterial functional enrichment analysis linked to heritability</b>
-# Objectives: To identify enriched functions (COGs/ENOGs) in the genomes of species with high- and low-heritability values within the same genus.
-# Main stages:
+###<b>Step 3: Bacterial functional enrichment analysis linked to heritability</b>
+#### Objectives: To identify enriched functions (COGs/ENOGs) in the genomes of species with high- and low-heritability values within the same genus.
+#### Main stages:
 1. Functional annotation of genomes: Already using protein catalogues per genome;
 2. Phylogenetic-aware enrichment analysis;
 
-<b>## Step 4: A hypothesis-driven selection of host candidate genes for causal inference analyses</b>
-# Objectives: To delimitate, based on the results obtained in the previous steps, what host genes might be associated with polygenic effects in bacterial groups with high heritability and use such genes for causal inference analyses.
-# Main stages:
+###<b> Step 4: A hypothesis-driven selection of host candidate genes for causal inference analyses</b>
+#### Objectives: To delimitate, based on the results obtained in the previous steps, what host genes might be associated with polygenic effects in bacterial groups with high heritability and use such genes for causal inference analyses.
+#### Main stages:
 1. Filtering SNPs based on the list of candidate genes in the genotyping panel;
 2. Select sentinel SNPs per gene on the genus level (Cross-validation: training set);
 3.  Test whether the additive effects of such sentinel SNPs across species from the same genus were associated with the species heritability values (Cross-validation: testing set);
 4.  Run mediation analysis and Mendelian randomisation (MR) crossing host genes, microbiome features and host phenotypes (Cross-validation: testing set);
 5. Define a structured equation model (SEM) for the multi-level chain of events connecting keystone species with host health-associated traits after MR validation.
 
-<b>PREREQUISITES</b>
+##<b>PREREQUISITES</b>
 In order to run the pipelines, you will need Nextflow and Singularity for containerisation. 
 
-# Installing Nextflow:
+### Installing Nextflow:
 
 ```
 wget -qO- https://get.nextflow.io | bash
 ```
 
-# Singularity: [here](https://docs.sylabs.io/guides/3.1/user-guide/quick_start.html#quick-installation-steps)
+### Singularity: [here](https://docs.sylabs.io/guides/3.1/user-guide/quick_start.html#quick-installation-steps)
 
 In CRG's cluster you can log to the NEXTFLOW node:
 
@@ -91,17 +91,17 @@ ssh -Y YOURUSER@nextflow.hpc.crg.es
 
 Then you can install NextFlow as indicated previously.
 
-<b>INSTALLING THE SUITE</b>
+##<b>INSTALLING THE SUITE</b>
 
 ```
 git clone --recurse-submodules git@github.com:Baud-lab/hermes-wire.git
 ```
 
-<b>NEXTFLOW CONFIG FILE</b>
+##<b>NEXTFLOW CONFIG FILE</b>
 
 The file “<b>nextflow.config</b>” indicates how the pipeline’s processes will run in parallel according to their channels, in accordance with the cluster specifications being used, such as the different queues available for job scheduling. At CRG, the workload manager and job scheduler used for the institution’s HPC cluster is SLURM (Simple Linux Utility for Resource Management), and for this reason, the environments/profiles defined in this file are currently set to this system, but this can be changed in case of other HCP managing systems being used.
 
-<b>RUNNING A PIPELINE (Example: Step1)</b>
+##<b>RUNNING A PIPELINE (Example: Step1)</b>
 
 ```
 sbatch submit_nf.sh main.nf -profile singularity,slurm_genoa -params-file params.yaml -resume -w ./work```
@@ -117,9 +117,9 @@ cat .nextflow.pid | xargs kill
 the “<b>params.yaml</b> file contains the information for running the pipeline, such as input files and arguments to be incorporated by the scripts and the corresponding tools/libraries/packages of each process. Here is an example, considering Step1:
 
 ```
-# Parameters of the HERMES-WIRE Step 1 Pipeline
+### Parameters of the HERMES-WIRE Step 1 Pipeline
 
-## STEP 1: Data preprocessing and profiling
+### STEP 1: Data preprocessing and profiling
 
 ### Modules
 module_preprocessing:         "YES"
