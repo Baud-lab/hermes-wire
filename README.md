@@ -1,4 +1,4 @@
-<h1 align="center" style="font-weight:400; font-size:28px; line-height:1.3;">
+<h1 align="left" style="font-weight:400; font-size:28px; line-height:1.3;">
   <b style="font-size:30px;">HERMES-WIRE</b>
   (<b style="font-size:30px;">HER</b>itable
   <b style="font-size:30px;">M</b>icrobiom<b style="font-size:30px;">E</b>
