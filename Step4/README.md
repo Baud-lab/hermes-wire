@@ -5,7 +5,7 @@
 
 ---
 
-## 🧩 Overview
+## 📘 Overview
 
 **Step 4** of the **HERMES-WIRE** pipeline performs the final *genome-to-microbiome causal dissection* by integrating:
 - **Heritable microbiome traits** (taxa, guilds, α/β-diversity)  
@@ -149,5 +149,6 @@ If you use this module or its outputs, please cite:
 > [https://github.com/Baud-lab/hermes-wire](https://github.com/Baud-lab/hermes-wire)
 
 ---
+
 
 
