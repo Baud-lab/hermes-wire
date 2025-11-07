@@ -1,8 +1,7 @@
 <p align="center" style="font-weight:400; font-size:16px;">
   <b style="font-size:18px;">HERMES-WIRE</b> 
   (<b style="font-size:18px;">HER</b>itable 
-  <b style="font-size:18px;">M</b>icrobiom
-  <b style="font-size:18px;">E</b> 
+  <b style="font-size:18px;">M</b>icrobiom<b style="font-size:18px;">E</b>
   <b style="font-size:18px;">S</b>tructure — 
   <b style="font-size:18px;">W</b>orkflow for 
   <b style="font-size:18px;">I</b>nterpreting host–microbiome 
