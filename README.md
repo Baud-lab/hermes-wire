@@ -105,7 +105,7 @@ The file <b>`nextflow.config`</b> indicates how the pipeline’s processes will 
 ## <b>RUNNING A PIPELINE (Example: Step1)</b>
 
 ```
-sbatch submit_nf.sh main.nf -profile singularity,slurm_genoa -params-file params.yaml -resume -w ./work
+sbatch submit_nf.sh main.nf -profile singularity,slurm_genoa -params-file params.yaml -resume -w work
 ```
 
 This command line can be seen in the <b>`cmd`</b> files present in all step directories. The <b>`main.nf`</b> file, also known as the pipeline “manifest”, is the primary code that defines how processes will be organised in different workflows and how initial parameters will determine the various directions the pipeline will follow. Each <b>`main.nf`</b> file is supported by a <b>`local_modules.nf`</b>, loading the different processes and workflows these modules comprehend, along with the specific requirements in terms of container, running time, memory allocation, inputs and scripts used. The latter are packed in the folder <b>`bin`</b> and can be made of many programming languages, such as R, Python or bash.
