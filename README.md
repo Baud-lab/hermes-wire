@@ -1,4 +1,4 @@
-<h1 align="center" style="font-weight:400; font-size:28px; line-height:1.3;">
+<h1 style="font-weight:400; font-size:28px; line-height:1.3;">
   <b style="font-size:30px;">HERMES-WIRE</b>  
   (<b style="font-size:30px;">HER</b>itable  
   <b style="font-size:30px;">M</b>icrobiom<b style="font-size:30px;">E</b>  
@@ -13,15 +13,10 @@
   <img src="assets/hermes-wire-logo.png" alt="HERMES-WIRE logo: Hermes with DNA and gut bacteria" width="320">
 </p>
 
-<p align="center">
-  <i>A modular Nextflow suite combining quantitative genetics with systems biology  
-  to decode how host polygenic variation wires gut microbial communities and impacts metabolic health.</i>
-</p>
+<i>A modular Nextflow suite combining quantitative genetics with systems biology to decode how host polygenic variation wires gut microbial communities and impacts metabolic health.</i>
 
-<p align="center">
-  <b>Centre for Genomic Regulation (CRG), Barcelona — 2025</b><br>
-  <b>Authors:</b> Felipe Morillo Sanz Dias, Luca Cozzuto, Hélène Tonnele, Amelie Baud  
-</p>
+<b>Centre for Genomic Regulation (CRG), Barcelona — 2025</b><br>
+<b>Authors:</b> Felipe Morillo Sanz Dias, Luca Cozzuto, Hélène Tonnele, Amelie Baud  
 
 ---
 
