@@ -47,20 +47,21 @@ wget -qO- https://get.nextflow.io | bash
 
 ### Singularity: [here](https://docs.sylabs.io/guides/3.1/user-guide/quick_start.html#quick-installation-steps)
 
+
 In CRG's cluster you can log to the NEXTFLOW node:
 
 ```
 ssh -Y YOURUSER@nextflow.hpc.crg.es
 ```
 
-And then you just need to modify once your bashrc file for loading both Java and singularity. You need also to specify some folders for storing the cache for singularity. So you might want to create those folders first.
+Then, you just need to modify once your bashrc file for loading both Java and singularity. You need also to specify some folders for storing the cache for singularity. So you might want to create those folders first.
 
 ```
 mkdir $HOME/tmp
 mkdir $HOME/singularity_containers/
 mkdir $HOME/tmp_singu
 ```
-and then
+Finally,
 
 ```
 vi $HOME/.bashrc
@@ -76,7 +77,7 @@ export SINGULARITY_TMPDIR=$HOME/tmp_singu
 
 ```
 
-And then logging-out and logging-in:
+Log-out and log-in to reset:
 
 ```
 exit 
@@ -99,22 +100,23 @@ git clone --recurse-submodules git@github.com:Baud-lab/hermes-wire.git
 
 ## <b>NEXTFLOW CONFIG FILE</b>
 
-The file “<b>nextflow.config</b>” indicates how the pipeline’s processes will run in parallel according to their channels, in accordance with the cluster specifications being used, such as the different queues available for job scheduling. At CRG, the workload manager and job scheduler used for the institution’s HPC cluster is SLURM (Simple Linux Utility for Resource Management), and for this reason, the environments/profiles defined in this file are currently set to this system, but this can be changed in case of other HCP managing systems being used.
+The file <b>`nextflow.config`</b> indicates how the pipeline’s processes will run in parallel according to their channels, in accordance with the cluster specifications being used, such as the different queues available for job scheduling. At CRG, the workload manager and job scheduler used for the institution’s HPC cluster is SLURM (Simple Linux Utility for Resource Management), and for this reason, the environments/profiles defined in this file are currently set to this system, but this can be changed in case of other HCP managing systems being used.
 
 ## <b>RUNNING A PIPELINE (Example: Step1)</b>
 
 ```
-sbatch submit_nf.sh main.nf -profile singularity,slurm_genoa -params-file params.yaml -resume -w ./work```
+sbatch submit_nf.sh main.nf -profile singularity,slurm_genoa -params-file params.yaml -resume -w ./work
+```
 
-This command line can be seen in the “<b>cmd</b>” files present in all step directories. The “<b>main.nf</b>” file, also known as the pipeline “manifest”, is the primary code that defines how processes will be organised in different workflows and how initial parameters will determine the various directions the pipeline will follow. Each “<b>main.nf</b>” file is supported by a “<b>local_modules.nf<\b>, loading the different processes and workflows these modules comprehend, along with the specific requirements in terms of container, running time, memory allocation, inputs and scripts used. The latter are packed in the folder “<b>bin</b>” and can be made of many programming languages, such as R, Python or bash.
+This command line can be seen in the <b>`cmd`</b> files present in all step directories. The <b>`main.nf`</b> file, also known as the pipeline “manifest”, is the primary code that defines how processes will be organised in different workflows and how initial parameters will determine the various directions the pipeline will follow. Each <b>`main.nf`</b> file is supported by a <b>`local_modules.nf`<\b>, loading the different processes and workflows these modules comprehend, along with the specific requirements in terms of container, running time, memory allocation, inputs and scripts used. The latter are packed in the folder <b>`bin`</b> and can be made of many programming languages, such as R, Python or bash.
 
-To stop a run, you need to kill the Nextflow main process. The **PID** is indicated by the hidden file `.nextflow.pid` 
+To stop a run, you need to kill the Nextflow main process. The **PID** is indicated by the hidden file <b>`.nextflow.pid`<\b> 
 
 ```
 cat .nextflow.pid | xargs kill
 ```
 
-the “<b>params.yaml</b> file contains the information for running the pipeline, such as input files and arguments to be incorporated by the scripts and the corresponding tools/libraries/packages of each process. Here is an example, considering Step1:
+the <b>`params.yaml`</b> file contains the information for running the pipeline, such as input files and arguments to be incorporated by the scripts and the corresponding tools/libraries/packages of each process. Here is an example, considering Step1:
 
 ```
 ### Parameters of the HERMES-WIRE Step 1 Pipeline
@@ -148,9 +150,10 @@ functional_file_index: "./input/indices/prromenade/bactvirus2020*" # Download fr
 functional_file_ec: "./input/indices/prromenade/taxid_name.txt"
 
 ### Output folder
-output_folder: "./Results_Step1/"```
+output_folder: "./Results_Step1/"
+```
 
-<b>USING THE NEXTFLOW TOWER</b>
+## <b>USING THE NEXTFLOW TOWER</b>
 
 Log in to the Tower website: https://tower.nf/. Go on `Sign-in`. Then authenticate with either **GitHub** or **Google**.  
 Then go on the icon on the top right with your face or a symbol and **Your tokens**. Add a token, choosing a name, and copy the value. 
@@ -160,6 +163,7 @@ Add to your `$HOME/.bashrc` as previosly indicated.
 ```
 export TOWER_ACCESS_TOKEN=<YOUR ACCESS TOKEN>
 ```
+
 Log-off and Log-in.
 
 Then launch the pipeline using `-with-tower` as an argument for the command line above. You just need to set the token once, and then you can use Tower every time you run a pipeline.
