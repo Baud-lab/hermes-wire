@@ -1,0 +1,32 @@
+# Parameters of the HERMES-WIRE Step 1 Pipeline
+
+## STEP 1: Data preprocessing and profiling
+
+### Modules
+module_preprocessing:         "YES"
+module_taxonomic_mapping:     "YES"
+module_functional_mapping:    "YES"
+
+### Tool options
+tool_opt: "./tool_opt.tsv"
+
+### Pre-processing
+preprocessing_file_raw_reads: "./dataset_raw/demo/*_R{1,2}_001.fastq.gz"
+preprocessing_file_adapters: "./input/Adapters_Qiita.fa"
+preprocessing_file_host_genome: "./input/mRatBN7.2.fna" # Dowload https://ftp.ncbi.nlm.nih.gov/genomes/all/GCF/015/227/675/GCF_015227675.2_mRatBN7.2/GCF_015227675.2_mRatBN7.2_rna.fna.gz and unzip
+
+### Non-host reads (If you don't select Module Pre-processing)
+file_non_host_reads: "./dataset_non_host/*_{1,2}.fq.gz"  # Keep empty if no files are available
+
+### Taxonomic
+taxonomic_file_microbiome_index: "./input/indices/kaiju/gtdb_index.fmi" # Download from https://zenodo.org/uploads/17545483 and unzip
+taxonomic_file_genome_sizes: "./input/indices/kaiju/catalogue_stats.csv"
+taxonomic_parameter_normalization_by_genome_size: 'YES'
+
+### Functional
+functional_file_ref_catalogue: ""
+functional_file_index: "./input/indices/prromenade/bactvirus2020*" # Download from https://zenodo.org/uploads/17545032 and unzip
+functional_file_ec: "./input/indices/prromenade/taxid_name.txt"
+
+### Output folder
+output_folder: "./Results_Step1/"

@@ -1,0 +1,6 @@
+#step	tool	extrapars
+trimming	trimmomatic	"ILLUMINACLIP:./input/Adapters_Qiita.fa:2:30:10:2:keepBothReads LEADING:3 TRAILING:3 SLIDINGWINDOW:4:15 MINLEN:36"
+remove_host	samtools	"-f 12 -F 256"
+alignment_microbiome	kaiju	""
+alignment_microbiome	humann3	"--verbose --evalue 0.01 --bypass-prescreen"
+report	multiqc	"-c config.yaml"
