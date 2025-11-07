@@ -104,36 +104,6 @@ You can monitor execution on **Nextflow Tower** by adding `-with-tower`.
 
 ---
 
-## <b>📊 Workflow logic (Mermaid)</b>
-
-```mermaid
-flowchart TD
-    A([Start]) --> B{Comparisons?}
-    B -- YES --> B1[Samples & taxa harmonization<br>(Shallow ↔ 16S)]
-    B -- NO --> C{Matrix Processing?}
-    B1 --> C
-
-    C -- YES --> D[Filtering & Transformation]
-    C -- NO --> Z[Skip to existing H5 / residuals]
-
-    D --> E{Alpha / Beta Diversity?}
-    E -- YES --> F[Compute α, β diversity]
-    E -- NO --> G
-
-    F --> G{Clusters / Enterotypes / Networks?}
-    G -- YES --> H[UMAP + HDBSCAN → Guilds / Networks]
-    G -- NO --> I
-
-    H --> I{Heritability or GWAS?}
-    I -- YES --> J[H5 creation → LMM heritability + GWAS]
-    I -- NO --> K([End])
-
-    Z --> I
-    J --> K([End])
-```
-
----
-
 ## <b>📂 Outputs</b>
 
 Results are written to the directory defined in <code>output_folder</code>:
@@ -176,6 +146,7 @@ We acknowledge the support of the <b>CRG HPC Core Facility</b> and the Genetics 
 Distributed under the <b>MIT License</b>.
 
 ---
+
 
 
 
