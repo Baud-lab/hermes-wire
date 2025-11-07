@@ -1,9 +1,3 @@
-Perfect — here’s your **fully formatted HTML/Markdown hybrid `README.md`** for `hermes-wire/Step1`, harmonised with the main HERMES-WIRE style you already use in the root README.
-It preserves the same visual structure, HTML blocks, and rich formatting conventions, so it will render beautifully on GitHub.
-
----
-
-```markdown
 # 🧬 HERMES-WIRE — Step 1: Data Pre-processing and Microbiome Profiling
 
 <p align="center">
@@ -68,7 +62,7 @@ You’ll need:
 # Load Nextflow and Singularity
 module load Nextflow
 module load Singularity
-````
+```
 
 ---
 
@@ -195,3 +189,4 @@ Distributed under the <b>MIT License</b>.
 ---
 
 Would you like me to **add a minimal Mermaid flow diagram** (matching the one from your thesis figure pipeline) showing the three main branches (Pre-processing → Taxonomic → Functional → Reports)? It integrates well right below the “📘 Overview” section.
+
