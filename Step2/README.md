@@ -60,7 +60,7 @@ module load Singularity
 
 ### <b>2. Download required HDF5 file (for analyses with the selected HS rats)</b>
 
-The pipeline depends on two large pre-computed indices hosted on <b>Zenodo</b>:
+The pipeline depends on a big HDF5 file hosted on <b>Zenodo</b>:
 
 | File type | Contents                                                                     | Zenodo link                                                                |
 | -------------- | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
@@ -158,6 +158,7 @@ We acknowledge the support of the <b>CRG HPC Core Facility</b> and the Genetics 
 Distributed under the <b>MIT License</b>.
 
 ---
+
 
 
 
