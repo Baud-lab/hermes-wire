@@ -139,21 +139,15 @@ nextflow run main.nf -params-file parameters/params_prev.yaml -resume
 
 ---
 
-## 🧠 Citation and Credits
+## <b>🧠 Citation</b>
 
-If you use this workflow, please cite:
+If you use this module or its outputs, please cite:
 
-> **Morillo F. M. S. D.**, *et al.* (in prep).
-> *Host genetics shapes crypt niche colonisation by keystone gut bacteria, influencing metabolic health.*
-> Centre for Genomic Regulation (CRG) & Universitat Pompeu Fabra (UPF), Barcelona.
-
-For code and containers:
-
-* **GitHub:** [Baud-lab/hermes-wire](https://github.com/Baud-lab/hermes-wire)
-* **DockerHub:** `morillofe/microbiome_geno_bioconductor`
+> **Morillo FMSD, Cozzuto L, Tonnele H, Baud A (2025)**
+> *HERMES-WIRE: HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects*
+> Centre for Genomic Regulation (CRG), Barcelona.
+> [https://github.com/Baud-lab/hermes-wire](https://github.com/Baud-lab/hermes-wire)
 
 ---
 
-Would you like me to extend this README with the **SLURM `submit_nf.sh` usage block and parameter explanations** (like those in Step 2, e.g., `--trait`, `--genera`, `--outdir`, etc.)?
-I can also format it for **Zenodo or GitHub rendering** (with collapsible `<details>` sections).
 
