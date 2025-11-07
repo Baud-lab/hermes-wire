@@ -1,6 +1,6 @@
 # HERMES-WIRE
 <p align="center">
-  <img src="assets/hermes-wire-logo.png" alt="HERMES-WIRE logo: Hermes with DNA and gut bacteria" width="220">
+  <img src="assets/hermes-wire-logo.png" alt="HERMES-WIRE logo: Hermes with DNA and gut bacteria" width="320">
 </p>
 
 HERMES-WIRE (<b>HER</b>itable <b>M</b>icrobiom<b>E</b> <b>S</b>tructure — <b>W</b>orkflow for <b>I</b>nterpreting host–microbiome <b>R</b>elationships &amp; <b>E</b>ffects) is a modular suite of Nextflow pipelines that fuse cost-effective quantitative genetics with systems biology to map how host polygenic variation wires gut microbial community structure and model their causal impacts on metabolic health.
@@ -14,7 +14,7 @@ HERMES-WIRE (<b>HER</b>itable <b>M</b>icrobiom<b>E</b> <b>S</b>tructure — <b>W
 2. Taxonomic profiling: Alignment with a reference catalogue and read counting (Species-Phylum);
 3. Functional profiling: Alignment with a reference catalogue and read counting (EC4-EC1);
 
-###<b>Step 2: Microbiome characterisation</b>
+### <b>Step 2: Microbiome characterisation</b>
 #### Objectives: To minimise the risks of mapping false positives and characterise the microbiome at different levels.
 #### Main stages:
 1. Matrix processing: Sample and taxa filtering, aggregation to higher taxonomic/functional levels, data transformation, rank-normalisation and residualisation (removal of fixed-effects)
