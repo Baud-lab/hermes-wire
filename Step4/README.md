@@ -1,12 +1,7 @@
-<h1 align="center" style="font-weight:400; font-size:28px; line-height:1.3;">
-  <b style="font-size:30px;">🧬 HERMES-WIRE</b> — Step 4:<br>
-  <b style="font-size:30px;">H</b>eritability-based <b style="font-size:30px;">E</b>xploration of host–microbiome <b style="font-size:30px;">R</b>elationships via <b style="font-size:30px;">M</b>ediation and <b style="font-size:30px;">E</b>ffect-modelling <b style="font-size:30px;">S</b>tructures
-</h1>
+# 🧬 HERMES-WIRE — Step 4: Integrative quantitative-genetic analysis of microbial taxa, guilds, and diversity traits using host genome data, cross-fit sentinel mapping, and structural mediation inference
 
-<p align="center" style="font-weight:400; font-size:16px;">
-  <i>Integrative quantitative-genetic analysis of microbial taxa, guilds, and diversity traits using host genome data, 
-  cross-fit sentinel mapping, and structural mediation inference.</i>
-</p>
+<b>Centre for Genomic Regulation (CRG), Barcelona — 2025</b>  
+<b>Authors:</b> Felipe Morillo Sanz Dias, Luca Cozzuto, Hélène Tonnele, Amelie Baud 
 
 ---
 
@@ -161,3 +156,4 @@ For code and containers:
 
 Would you like me to extend this README with the **SLURM `submit_nf.sh` usage block and parameter explanations** (like those in Step 2, e.g., `--trait`, `--genera`, `--outdir`, etc.)?
 I can also format it for **Zenodo or GitHub rendering** (with collapsible `<details>` sections).
+
