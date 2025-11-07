@@ -58,7 +58,19 @@ module load Singularity
 
 ---
 
-### <b>2 – Select a configuration</b>
+### <b>2. Download required HDF5 file (for analyses with the selected HS rats)</b>
+
+The pipeline depends on two large pre-computed indices hosted on <b>Zenodo</b>:
+
+| File type | Contents                                                                     | Zenodo link                                                                |
+| -------------- | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| **HDF5**  | GRM and Gwnotypes (`P50_rats_Rn7.h5`)                        | [[https://zenodo.org/uploads/17545483](https://zenodo.org/records/17546688)] |
+
+Download and extract the archive into `input/` using commands ```wget``` and ```tar -xvzf```, respectivelly.
+
+---
+
+### <b>3 – Select a configuration</b>
 
 Templates are available under the <code>parameters/</code> folder:
 
@@ -73,7 +85,7 @@ Each YAML file defines all modules (Matrix Processing, Clusters, Networks, Enter
 
 ---
 
-### <b>3 – Run the pipeline</b>
+### <b>4 – Run the pipeline</b>
 
 ```bash
 nextflow run main.nf -params-file parameters/full_shallow/params_shallow_tax.yaml -profile singularity
@@ -146,6 +158,7 @@ We acknowledge the support of the <b>CRG HPC Core Facility</b> and the Genetics 
 Distributed under the <b>MIT License</b>.
 
 ---
+
 
 
 
