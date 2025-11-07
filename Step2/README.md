@@ -64,8 +64,8 @@ Templates are available under the <code>parameters/</code> folder:
 
 | Configuration                                  | Purpose                                               | YAML file                                      |
 | ---------------------------------------------- | ----------------------------------------------------- | ---------------------------------------------- |
-| **Shallow Full Taxonomic**                     | Standard run using taxonomic profiles from Step 1     | `parameters/full_shallow/params_shallow_taxonomic.yaml`     |
-| **Shallow Full Functional**                    | Standard run using functional profiles (EC tables)    | `parameters/full_shallow/params_shallow_functional.yaml`    |
+| **Shallow Full Taxonomic**                     | Standard run using taxonomic profiles from Step 1     | `parameters/full_shallow/params_shallow_tax.yaml`     |
+| **Shallow Full Functional**                    | Standard run using functional profiles (EC tables)    | `parameters/full_shallow/params_shallow_func.yaml`    |
 | **Shallow ↔ 16S Harmonization (full)**         | Comparisons between Shallow and 16S with samples and taxa harmonised | `parameters/comparative/params_<shallow or 16S>_full_harm.yaml`    |
 | **Shallow ↔ 16S Harmonization (samples only)** | Comparisons between Shallow and 16S with only samples harmonised       | `parameters/comparative/params_<shallow or 16S>_sample_harm.yaml` |
 
@@ -76,7 +76,7 @@ Each YAML file defines all modules (Matrix Processing, Clusters, Networks, Enter
 ### <b>3 – Run the pipeline</b>
 
 ```bash
-nextflow run main.nf -params-file parameters/params_shallow_taxonomic.yaml -profile singularity
+nextflow run main.nf -params-file parameters/full_shallow/params_shallow_tax.yaml -profile singularity
 ```
 
 or via SLURM:
@@ -176,6 +176,7 @@ We acknowledge the support of the <b>CRG HPC Core Facility</b> and the Genetics 
 Distributed under the <b>MIT License</b>.
 
 ---
+
 
 
 
