@@ -1,9 +1,5 @@
 # 🧬 HERMES-WIRE — Step 1: Data Pre-processing and Microbiome Profiling
 
-<p align="center">
-  <img src="../assets/hermes-wire-logo.png" alt="HERMES-WIRE logo: Hermes with DNA and gut bacteria" width="300">
-</p>
-
 <b>Centre for Genomic Regulation (CRG), Barcelona — 2025</b>  
 <b>Authors:</b> Felipe Morillo Sanz Dias, Luca Cozzuto, Hélène Tonnele, Amelie Baud  
 
@@ -170,7 +166,7 @@ If you use this workflow or its pre-computed indices, please cite:
 ## <b>🧩 Acknowledgements</b>
 
 Developed under the <b>Baud Lab</b> at the <b>Centre for Genomic Regulation (CRG)</b> and <b>Universitat Pompeu Fabra (UPF)</b>.
-We acknowledge the support of the <b>HPC Core Facility at CRG</b>.
+We acknowledge the support of the <b>Bioinformatics Core Facility at CRG</b>.
 
 ---
 
@@ -181,12 +177,4 @@ Distributed under the <b>MIT License</b>.
 
 ---
 
-<p align="center">
-  <sub><i>Part of the HERMES-WIRE Nextflow suite for host–microbiome systems genetics analyses.</i></sub>
-</p>
-```
-
----
-
-Would you like me to **add a minimal Mermaid flow diagram** (matching the one from your thesis figure pipeline) showing the three main branches (Pre-processing → Taxonomic → Functional → Reports)? It integrates well right below the “📘 Overview” section.
 
