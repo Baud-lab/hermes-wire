@@ -170,19 +170,6 @@ Then set `input_faa_glob: ./proteins/*.faa` in `params.yaml` and run Step 3.
 
 ---
 
-## (Optional) CAZy with dbCAN2
-
-If you want **CAZy**:
-
-```bash
-# Example per-species protein file
-run_dbcan proteins/<species>.faa protein --out_dir cazy_out/<species> --cpu 8
-```
-
-Parse/aggregate dbCAN outputs and ensure `make_func_matrices.R` sees them (e.g., place compatible TSVs into the annotation folder the script ingests). See dbCAN2 docs for usage details.
-
----
-
 ⚠️ **Attention point:** The results reported on the thesis: <i>Host genetics shapes mucin niche colonisation by keystone gut bacteria, influencing metabolic health</i> (Dias, FMS; 2025 - <b>Yet to be published</b>) were obtained by using the codes on the `bin` folder separately. The Nextflow pipeline available here was not tested yet. Please, let us know if you found any problems trying to run it.
 
 ---
