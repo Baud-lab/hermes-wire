@@ -139,16 +139,26 @@ nextflow run main.nf -params-file parameters/params_prev.yaml -resume
 
 ---
 
-## <b>🧠 Citation</b>
+## 🧩 <b>Acknowledgements</b>
 
-If you use this module or its outputs, please cite:
+Developed under the <b>Baud Lab</b> at the <b>Centre for Genomic Regulation (CRG)</b> and <b>Universitat Pompeu Fabra (UPF)</b>, Barcelona.
+We acknowledge support from the <b>Bioinformatics Core Facility</b> and the <b>CRG Scientific IT team</b>.
 
-> **Morillo FMSD, Cozzuto L, Tonnele H, Baud A (2025)**
-> *HERMES-WIRE: HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects*
+---
+
+## 🧠 <b>Citation</b>
+
+> Morillo FMSD, Cozzuto L, Tonnele H, Baud A (2025). <i>HERMES-WIRE: HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects.</i>
 > Centre for Genomic Regulation (CRG), Barcelona.
 > [https://github.com/Baud-lab/hermes-wire](https://github.com/Baud-lab/hermes-wire)
 
 ---
 
+## 🧾 <b>License</b>
+
+© 2025 Centre for Genomic Regulation (CRG) and the authors.
+Distributed under the <b>MIT License</b>.
+
+---
 
 
