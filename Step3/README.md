@@ -1,193 +1,213 @@
-Great — thanks for clarifying. Here is the **README.md for Step 3** of the HERMES‑WIRE pipeline, matching the style of Step 4 and incorporating your directives.
+# 🧬 HERMES-WIRE — Step 3: Genome functional annotation → function×species matrices → phylogeny-aware enrichment
 
----
-
-# 🧬 HERMES-WIRE — Step 3: Genome functional annotation & gene-family profiling (COG/KEGG/CAZy)
-
-**Centre for Genomic Regulation (CRG), Barcelona — 2025**
+**Centre for Genomic Regulation (CRG), Barcelona — 2025**  
 **Authors:** Felipe Morillo Sanz Dias, Luca Cozzuto, Hélène Tonnele, Amelie Baud
 
 ---
 
 ## 📘 Overview
 
-**Step 3** of the HERMES-WIRE pipeline performs functional annotation of microbial genomes and builds species-level gene-family matrices. Specifically:
+**Step 3** takes **protein FASTA** files (we used **GTDB r207 proteins**) and:
 
-* We begin from protein FASTA files (in our case, the protein FASTAs from the GTDB R207 reference set).
-* We annotate each protein with functional categories (COGs/ENOGs, KEGG orthology/EC) via eggNOG‑mapper.
-* We annotate carbohydrate‐active enzyme (CAZyme) families via dbCAN2 (HMM + DIAMOND approach). ([OUP Academic][1])
-* We summarise results to produce matrices of *function vs species* (for the set of species represented in the input FASTAs).
-* These matrices serve as input for subsequent quantitative and comparative analyses (used in Step 4 and downstream).
+1) **Annotates** proteins with **eggNOG-mapper** (COG/ENOG, KEGG KO, EC, PFAM).  
+2) **Builds matrices** of **functions × species** (from all species represented in the FASTAs).  
+3) **Tests phylogeny-aware enrichment** (PGLS) of functions in **high- vs low-heritability** species using the GTDB taxonomy, phylogenetic tree and Step-2 heritability results.
 
----
-
-## ⚙️ Pipeline Summary
-
-| Phase | Description                                                                           | Output folder                |
-| ----- | ------------------------------------------------------------------------------------- | ---------------------------- |
-| **0** | Gather input protein FASTA files (GTDB R207) and prepare directory structure.         | `phase0`                     |
-| **1** | Run eggNOG-mapper functional annotation on the protein FASTAs; generate .tsv outputs. | `phase1_eggnog`              |
-| **2** | Run CAZyme annotation (dbCAN2) on the protein FASTAs; parse and summarise hits.       | `phase2_cazyme`              |
-| **3** | Consolidate annotation tables: link species ↔ COG/KEGG/ENOG/CAZy hits.                | `phase3_species_annotations` |
-| **4** | Build gene‐family abundance matrices (species × function) for COG/KEGG and CAZy.      | `phase4_matrices`            |
-| **5** | Quality control & filtering (e.g., remove low‐coverage species, normalise counts).    | `phase5_filtered_matrices`   |
+> ℹ️ CAZy: The core pipeline here **does not run dbCAN2** itself. If you want CAZy, annotate externally (e.g. with `run_dbcan`) and ensure the parsed tables are available for `make_func_matrices.R` to ingest. See “Optional: CAZy” below.
 
 ---
 
-## 📁 Directory Layout
+## ⚙️ What this pipeline actually runs
+
+- **Process 1 — EMMAPPER_ANNOTATE**  
+  Runs eggNOG-mapper on each `*.faa` and writes `*.annotations.tsv`.
+
+- **Process 2 — BUILD_MATRICES**  
+  Reads all annotation TSVs and creates:
+  - `func_matrices.RData` (all selected spaces)
+  - `func_eggNOG_OGs.RData` (eggNOG OG-focused)
+  - `qc_functions_summary.tsv`
+
+- **Process 3 — ENRICHMENT_PGLS** *(enabled only if `taxonomy_tsv`, `phylo_tree`, `herit_rdata` are set)*  
+  Runs phylogeny-aware enrichment (PGLS) across species and writes:
+  - `res_*.csv` tables
+  - `enrichment_*.RData`
+  - figures `*.pdf`
+
+---
+
+## 📁 Directory layout (repo)
 
 ```
+
 Step3/
-├── main.nf                         # Main Nextflow pipeline (DSL2)
-├── nextflow.config                 # Execution profiles, defaults, resources
-├── submit_nf.sh                    # Example SLURM submission wrapper
-├── bin/                            # R and bash helper scripts (parsing, summarising)
-├── parameters/
-│   └── params_step3.yaml           # Configure run (input paths, thresholds etc.)
-├── singularity_containers/         # (Optional) Local .sif containers if not using Docker
-├── input/
-│   ├── proteins/                    # Input protein FASTA files (GTDB R207)
-│   └── metadata/                    # Species metadata (IDs, names, GTDB taxonomy)
-└── work/                           # Nextflow work directory (auto-generated)
-```
+├── main.nf
+├── nextflow.config
+├── params.yaml
+├── submit_nf.sh
+├── bin/                     # helper scripts called by processes
+├── input/                   # e.g., cog-24.def.tab, small demos
+├── dockerfiles/             # optional
+├── singularity_containers/  # optional
+└── work/                    # nf work dir (auto)
+
+````
 
 ---
 
-## 🚀 Running the Pipeline
+## 🔧 Inputs (params)
 
-### 1. Load Nextflow environment
+These mirror `main.nf` and `params.yaml`.
+
+**Core:**
+- `input_faa_glob` : Glob for protein FASTAs (e.g. `input/*.faa`)
+- `threads` : CPU threads per eggNOG-mapper job
+- `emapper_mode` : `"diamond"` (default) or `"mmseqs"`
+- `emapper_args_extra` : Extra args to pass to eggNOG-mapper (optional)
+
+**Optional (for enrichment):**
+- `taxonomy_tsv` : GTDB mapping (`Genome\tTaxonomy`)
+- `phylo_tree` : GTDB r207 Newick tree
+- `herit_rdata` : RData with heritability objects (from Step 2)
+
+**Function space building:**
+- `functions` : Comma-sep list (default:
+  `eggNOG_OGs,CAZy,EC,KEGG_ko,KEGG_Module,KEGG_Pathway,PFAMs,COG_category,COG_pathway`)
+- `cog_def_tab` : `cog-24.def.tab` (functional names for COGs)
+
+**Enrichment options:**
+- `subset_id` : Label for subset (e.g., `ALL`)
+- `method` : e.g., `Shallow`
+- `report_model` : `ML` or `AIC`
+- `branchlen_transform` : `none` or `grafen`
+- `groups` : Taxa of interest (e.g., `g__Prevotella,g__Bacteroides`)
+
+**Containers (optional):**
+- `container_emapper` : e.g., `docker://eggnogmapper/emapper:2.1.12`
+- `container_R` : e.g., `docker://.../genesis-nf:bioc3.18-ext.v2`
+
+---
+
+## 🚀 How to run
+
+### A) With the provided `params.yaml`
 
 ```bash
-module load nextflow
-```
+nextflow run main.nf -params-file params.yaml -with-report -resume
+````
 
-### 2. Submit a job (example)
-
-```bash
-bash submit_nf.sh \
-  -p parameters/params_step3.yaml \
-  -w /scratch/fmorillo/Step3_work \
-  -o results_step3
-```
-
-### 3. Alternatively, run interactively
+### B) On a cluster (example wrapper)
 
 ```bash
-nextflow run main.nf -params-file parameters/params_step3.yaml -resume
+bash submit_nf.sh
 ```
 
----
-
-## 🔧 Input Requirements
-
-| Parameter                  | Description                                                             |
-| -------------------------- | ----------------------------------------------------------------------- |
-| `protein_fastas_dir`       | Directory containing all species’ protein FASTA files (e.g., GTDB R207) |
-| `species_metadata_tsv`     | Metadata table: species ID, GTDB taxonomy, file path etc.               |
-| `eggnog_db`                | Path to eggNOG-mapper database reference                                |
-| `cazyme_db`                | Path to CAZyme (dbCAN2) database files                                  |
-| `min_proteins_per_species` | Minimum number of proteins to retain a species                          |
-| `function_output_prefix`   | Prefix for functional annotation tables                                 |
+> Adjust `nextflow.config` (profiles, queue, resources) as needed.
 
 ---
 
-## 🧠 Analysis Modules
+## 🧾 Outputs
 
-* **eggNOG annotation:** Uses eggNOG-mapper on the input protein FASTAs to assign COGs/ENOGs, KEGG orthologs, and EC numbers; summarises per‐species counts.
-* **CAZyme annotation:** Utilises the dbCAN2 pipeline (HMMER vs dbCAN HMMdb + DIAMOND vs CAZy database) for carbohydrate‐active enzyme family identification. ([OUP Academic][1])
-* **Matrix construction:** Aggregates per‐species annotation hits into abundance matrices (species × function families), suitable for comparative analysis (taxon‐function associations, diversity metrics, guild profiling).
-* **Quality filtering & normalisation:** Optionally removes species with insufficient proteins or annotation coverage, and normalises counts (e.g., per-million, log-transform) to ensure downstream compatibility.
+```
+Results/
+├── 01_annotations/
+│   └── <GENOME>.annotations.tsv
+├── 02_matrices/
+│   ├── func_matrices.RData
+│   ├── func_eggNOG_OGs.RData
+│   └── qc_functions_summary.tsv
+└── 03_enrichment/   # only if taxonomy + tree + herit provided
+    ├── res_*.csv
+    ├── enrichment_*.RData
+    └── *.pdf
+```
 
----
-
-## 🧬 Example Runs
-
-| Run Name           | YAML file                     | Description                                            |
-| ------------------ | ----------------------------- | ------------------------------------------------------ |
-| **Bacteroides**    | `parameters/params_bac.yaml`  | Full annotation matrix for *Bacteroides* species group |
-| **Prevotella**     | `parameters/params_prev.yaml` | Annotation for *Prevotella* species group              |
-| **Paraprevotella** | `parameters/params_para.yaml` | Annotation for *Paraprevotella* group                  |
-
----
-
-## 🧾 Outputs (key files)
-
-| Folder                      | Key Output File                          | Description                                   |
-| --------------------------- | ---------------------------------------- | --------------------------------------------- |
-| `phase1_eggnog/`            | `species_annotation_eggnog.tsv`          | Species × eggNOG annotation summary           |
-| `phase2_cazyme/`            | `species_annotation_cazy.tsv`            | Species × CAZy family summary                 |
-| `phase4_matrices/`          | `species_x_function_matrix.tsv`          | Combined annotation matrix (COG/KEGG or CAZy) |
-| `phase5_filtered_matrices/` | `filtered_matrix_species_x_function.tsv` | QC-filtered and normalised matrix             |
+**Final matrices are** **functions × species** (matching the set of species present in the protein FASTAs).
 
 ---
 
-## 🧱 Optional: Fetching Genomes from NCBI and Generating Protein FASTAs
+## 🧪 Notes on function spaces
 
-Although Step 3 typically uses the GTDB R207 protein FASTAs, the following workflow is provided for users who wish to retrieve genomes directly from NCBI (for example to extend beyond GTDB or include custom accessions) and convert them into protein FASTAs suitable for annotation.
+* **eggNOG-mapper** supplies COG/ENOG, KEGG KO, EC, PFAM.
+* **CAZy** requires external annotation (e.g., `run_dbcan`) or a curated mapping layer. If you include CAZy in `functions` but don’t supply CAZy hits, those slots will be empty.
 
-### Step A – Select accession list
+---
 
-1. Choose your target taxa (e.g., *Bacteroides*, *Prevotella*, *Paraprevotella*).
-2. Create a list of all genomes (clusters) you want to download (accession numbers).
+## 🌳 Phylogeny-aware enrichment (PGLS)
 
-### Step B – Download genome FASTA files
+If you provide:
+
+* `taxonomy_tsv` (GTDB mapping),
+* `phylo_tree` (GTDB r207 Newick),
+* `herit_rdata` (from Step 2; includes heritability metrics),
+
+then **ENRICHMENT_PGLS** runs PGLS across species and writes CSV tables and PDF figures in `03_enrichment/`.
+
+---
+
+## 📦 Optional: fetch genomes from NCBI and produce proteins
+
+> We used **GTDB r207 protein FASTAs** for our analyses. If you want to start from NCBI accessions instead:
+
+### 1) Download assemblies (GenBank or RefSeq)
 
 ```bash
-# To retrieve GCA_ accessions (from GenBank)
-singularity exec ncbi-genome-download.sif \
-  ncbi-genome-download --assembly-accessions genomes_v3.txt \
-    -s genbank -F fasta -o /path/to/output/genomes_comparison_v3 bacteria
-
-# To retrieve GCF_ accessions (from RefSeq)
-singularity exec ncbi-genome-download.sif \
-  ncbi-genome-download --assembly-accessions genomes_v2.txt \
-    -s refseq -F fasta -o /path/to/output/genomes_comparison_v2 bacteria
+# accessions.txt contains one GCA_/GCF_ per line
+ncbi-genome-download --assembly-accessions accessions.txt \
+  -s genbank -F fasta -o ./ncbi_dl bacteria   # or -s refseq
 ```
 
-> **Note:** GCF_ accession numbers come from RefSeq assemblies; GCA_ accessions come from GenBank. Both databases may contain bacterial genomes. In the command you must specify `bacteria` as the taxonomic group.
-
-### Step C – Move extracted files
+### 2) Collect FASTA files into one place
 
 ```bash
-find /path/to/output/genomes_comparison_v2 -mindepth 2 -type f -name "*.gz" \
-     -exec mv -i {} /path/to/output/genomes_comparison_v2 \;
+mkdir -p genomes
+find ./ncbi_dl -type f -name "*.fna.gz" -exec cp {} genomes/ \;
+gunzip -f genomes/*.fna.gz
 ```
 
-### Step D – Predict proteins with Prodigal
+### 3) Call proteins with Prodigal
 
 ```bash
-INPUT_P=$(ls /path/to/output/genomes_comparison_v3/*_genomic.fna | sort -u | sed -n ${SGE_TASK_ID}p)
-O=$(echo $INPUT_P | sed -r 's/.{69}//' | sed 's/_genomic.fna//')
-OUT="/path/to/output/genomes_comparison_v3"
-
-echo "Started"
-prodigal -i ${INPUT_P} -a ${OUT}/proteins/${O}_protein.fasta -t $NSLOTS
-echo "Prodigal ended"
+mkdir -p proteins
+for f in genomes/*.fna; do
+  base=$(basename "$f" .fna)
+  prodigal -i "$f" -a "proteins/${base}.faa" -q
+done
 ```
 
-Once you have the protein FASTA files (`*_protein.fasta`), you can feed them into Step 3 of the pipeline (instead of the GTDB R207 set).
+Then set `input_faa_glob: ./proteins/*.faa` in `params.yaml` and run Step 3.
 
 ---
 
-## 🧩 Acknowledgements
+## (Optional) CAZy with dbCAN2
 
-Developed under the [Baud Lab](https://www.crg.eu/en/programmes-groups/baud-lab) at the [Centre for Genomic Regulation (CRG)](https://www.crg.eu) and [Universitat Pompeu Fabra (UPF)](https://www.upf.edu), Barcelona. We thank the CRG Bioinformatics Core and Scientific IT Team for compute infrastructure. The GTDB data, eggNOG, and dbCAN resources were essential for this workflow.
+If you want **CAZy**:
+
+```bash
+# Example per-species protein file
+run_dbcan proteins/<species>.faa protein --out_dir cazy_out/<species> --cpu 8
+```
+
+Parse/aggregate dbCAN outputs and ensure `make_func_matrices.R` sees them (e.g., place compatible TSVs into the annotation folder the script ingests). See dbCAN2 docs for usage details.
 
 ---
 
-## 🧠 Citation
+## 🧩 <b>Acknowledgements</b>
 
-> Morillo FMSD, Cozzuto L, Tonnele H, Baud A (2025). *HERMES-WIRE: HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects.* Centre for Genomic Regulation (CRG), Barcelona.
+Developed under the <b>[Baud Lab](https://www.crg.eu/en/programmes-groups/baud-lab)</b> at the <b>[Centre for Genomic Regulation (CRG)](https://www.crg.eu)</b> and <b>[Universitat Pompeu Fabra (UPF)](https://www.upf.edu)</b>, Barcelona.
+We acknowledge support from the <b>[Bioinformatics Core Facility](https://www.crg.eu/ca/programmes-groups/bioinformatics-unit)</b> and the <b>CRG [Scientific IT team](https://www.crg.eu/en/content/about-us-administration/scientific-information-technologies)</b>. Furthermore, the data used and tested for the development of this tool was generated in collaboration with <b>[NIDA](https://ratgenes.org)</b> and the <b>[Center for Microbiome Innovation](https://cmi.ucsd.edu)</b>, with the support of <b>[La Caixa Foundation](https://lacaixafoundation.org/en/)</b>.
+
+---
+
+## 🧠 <b>Citation</b>
+
+> Morillo FMSD, Cozzuto L, Tonnele H, Baud A (2025). <i>HERMES-WIRE: HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects.</i>
+> Centre for Genomic Regulation (CRG), Barcelona.
 > [https://github.com/Baud-lab/hermes-wire](https://github.com/Baud-lab/hermes-wire)
 
 ---
 
-## 🧾 License
+## 🧾 <b>License</b>
 
-© 2025 Centre for Genomic Regulation (CRG) and the authors. Distributed under the [Apache License 2.0](https://github.com/Baud-lab/hermes-wire/blob/main/LICENSE).
-
----
-
-If you like, I can prepare a **markdown version with badges** (CI status, license, version) and upload ready for your repo. Would you like me to do that?
-
-[1]: https://academic.oup.com/nar/article/46/W1/W95/4996582?utm_source=chatgpt.com "dbCAN2: a meta server for automated carbohydrate-active enzyme ..."
+© 2025 Centre for Genomic Regulation (CRG) and the authors.
+Distributed under the <b>[Apache License 2.0](https://github.com/Baud-lab/hermes-wire/blob/main/LICENSE)</b>.
