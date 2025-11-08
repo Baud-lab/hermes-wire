@@ -147,8 +147,8 @@ If you use this module or its outputs, please cite:
 
 ## <b>🧩 Acknowledgements</b>
 
-Developed under the <b>Baud Lab</b> (CRG & UPF).
-We acknowledge the support of the <b>CRG HPC Core Facility</b> and the Genetics of Complex Traits group.
+Developed under the <b>Baud Lab</b> at the <b>Centre for Genomic Regulation (CRG)</b> and <b>Universitat Pompeu Fabra (UPF)</b>, Barcelona.
+We acknowledge support from the <b>Bioinformatics Core Facility</b> and the <b>CRG Scientific IT team</b>.
 
 ---
 
@@ -158,6 +158,7 @@ We acknowledge the support of the <b>CRG HPC Core Facility</b> and the Genetics 
 Distributed under the <b>MIT License</b>.
 
 ---
+
 
 
 
