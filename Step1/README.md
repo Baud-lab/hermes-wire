@@ -153,8 +153,8 @@ If you use this workflow or its pre-computed indices, please cite:
 
 ## <b>🧩 Acknowledgements</b>
 
-Developed under the <b>Baud Lab</b> at the <b>Centre for Genomic Regulation (CRG)</b> and <b>Universitat Pompeu Fabra (UPF)</b>.
-We acknowledge the support of the <b>Bioinformatics Core Facility at CRG</b>.
+Developed under the <b>Baud Lab</b> at the <b>Centre for Genomic Regulation (CRG)</b> and <b>Universitat Pompeu Fabra (UPF)</b>, Barcelona.
+We acknowledge support from the <b>Bioinformatics Core Facility</b> and the <b>CRG Scientific IT team</b>.
 
 ---
 
@@ -164,6 +164,7 @@ We acknowledge the support of the <b>Bioinformatics Core Facility at CRG</b>.
 Distributed under the <b>MIT License</b>.
 
 ---
+
 
 
 
