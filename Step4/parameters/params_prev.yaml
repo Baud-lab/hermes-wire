@@ -8,7 +8,7 @@ genes_xlsx: "./input/putative_genes_final.xlsx"
 metadata_tsv: "../Step2/input/metadata_Shallow.txt" # Same input as in Step 2
 
 # genetics / random effects
-grm_rdata: "../Step2/input/grm.RData"
+grm_rdata: "../Step2/input/grm.RData" # Can be obtained by extracting the GRM matrix from the HDF5 files available in Step2/input/ and saved as an RData object
 resid_rda: "../Step2/Results_Taxonomic/Matrix_Processing/residuals_qned_counts.RData" # Output obtained in Step 2
 beta_rda: "../Step2/Results_Taxonomic/Diversity/residuals_qned_counts_beta.RData" # Output obtained in Step 2
 alpha_rda: "../Step2/Results_Taxonomic/Diversity/residuals_qned_counts_alpha.RData" # Output obtained in Step 2
