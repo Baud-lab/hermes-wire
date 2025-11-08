@@ -195,6 +195,6 @@ We acknowledge support from the <b>[Bioinformatics Core Facility](https://www.cr
 ## 🧾 <b>License</b>
 
 © 2025 Centre for Genomic Regulation (CRG) and the authors.
-Distributed under the <b>MIT License</b>.
+Distributed under the <b>[Apache License 2.0](https://github.com/Baud-lab/hermes-wire/blob/main/LICENSE)</b>.
 
 ---
