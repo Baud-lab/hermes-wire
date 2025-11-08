@@ -11,4 +11,3 @@ Rscript characterization_heritable.R \
 ```
 
 Furthermore, in `code/not_reviewed` you find extra codes generated for thesis <i>Host genetics shapes mucin niche colonisation by keystone gut bacteria, influencing metabolic health</i> (Dias, FMS; 2025 - <b>Yet to be published</b>) that are being revised in order to be in their best sharable versions.  
-
