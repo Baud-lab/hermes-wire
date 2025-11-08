@@ -26,7 +26,7 @@
 Together they provide a full *host–microbiome systems genetics* framework — from raw reads to host–microbiome causal inference.
 
 This work forms part of the PhD thesis <i>Host genetics shapes mucin niche colonisation by keystone gut bacteria, influencing metabolic health</i> by <b>Felipe Morillo Sanz Dias</b> (submitted November 2025), which was conducted at the Centre for Genomic Regulation (CRG), Department of Systems and Synthetic Biology / Universitat Pompeu Fabra (UPF), Department of Medicine and Life Sciences, under the supervision of Dr. Amelie Baud. The thesis is currently under evaluation and yet to be published.
-Users are kindly invited to report any issues encountered when running the pipeline.
+Users are kindly invited to report any issues encountered when running the pipeline and/or report missing parts for the total reproduction of the results reported on the thesis.
 
 ---
 
