@@ -16,7 +16,7 @@ cd ../
 
 ### Step 1: Make the concatenated fasta file ###
 
-GTDB="../gtdb207_demo/"
+GTDB="../input/gtdb207_demo/"
 
 echo "Started"
 #Extract files
