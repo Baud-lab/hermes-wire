@@ -145,7 +145,7 @@ then **ENRICHMENT_PGLS** runs PGLS across species and writes CSV tables and PDF 
 ```bash
 # accessions.txt contains one GCA_/GCF_ per line
 ncbi-genome-download --assembly-accessions accessions.txt \
-  -s genbank -F fasta -o ./ncbi_dl bacteria   # or -s refseq
+  -s genbank -F fasta -o ./ncbi_dl bacteria   # "-s genbank" for GCA_ files or "-s refseq" for GCF_ files
 ```
 
 ### 2) Collect FASTA files into one place
