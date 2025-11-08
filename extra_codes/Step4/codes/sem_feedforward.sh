@@ -24,7 +24,7 @@ BETA_RDA="../Step2/Results_Taxonomic/Diversity/residuals_qned_counts_beta.RData"
 ALPHA_RDA="../Step2/Results_Taxonomic/Diversity/residuals_qned_counts_alpha.RData" # Output obtained in Step 2
 CLUSTERS_RDA="../Step2/Results_Taxonomic/Cluster_Analyses/residuals_qned_counts_clusters.RData" # Output obtained in Step 2
 PHEN_RDA="../Step4/input/pehotypes_residuals.RData" # Same input as in Step 4
-GRM_RDA="../Step2/input/input/grm.RData" # Same input as in Step 2
+GRM_RDA="../Step4/input/input/grm.RData" # Same input as in Step 4
 META="../Step2/input/input/metadata_Shallow.txt" # Same input as in Step 2
 
 OUTDIR="../Results"
