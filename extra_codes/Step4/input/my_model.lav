@@ -1,0 +1,6 @@
+Bact ~~ Prev
+Guild ~ Bact + Prev
+Beta ~ Bact + Prev + Guild
+Alpha ~ Bact + Prev + Guild + Beta
+Glucose ~ Bact + Prev + Guild + Beta + Alpha
+
