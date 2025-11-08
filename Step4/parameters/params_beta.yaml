@@ -1,0 +1,101 @@
+# Parameters of the HERMES-WIRE Step 4 Pipeline
+
+## STEP 4: Host-microbiome functional wiring and causal inference
+
+# =================== Input files ===================
+h5_path: "../Step2/input/P50_rats_Rn7_cp.h5" # Same input as in Step 2
+genes_xlsx: "./input/putative_genes_final.xlsx"
+metadata_tsv: "../Step2/input/metadata_Shallow.txt" # Same input as in Step 2
+
+# genetics / random effects
+grm_rdata: "../Step2/input/grm.RData"
+resid_rda: "../Step2/Results_Taxonomic/Matrix_Processing/residuals_qned_counts.RData" # Output obtained in Step 2
+beta_rda: "../Step2/Results_Taxonomic/Diversity/residuals_qned_counts_beta.RData" # Output obtained in Step 2
+alpha_rda: "../Step2/Results_Taxonomic/Diversity/residuals_qned_counts_alpha.RData" # Output obtained in Step 2
+clusters_rda: "../Step2/Results_Taxonomic/Cluster_Analyses/residuals_qned_counts_clusters.RData" # Output obtained in Step 2
+med_glucose_rdata: "./input/pehotypes_residuals.RData" 
+herit_rdata: "../Step2/Results_Taxonomic/Heritability/heritability.RData"  # Output obtained in Step 2
+
+# taxonomy / phylogeny (used in Phase 7 PGLS)
+taxonomic_file_taxonomy:  "../Step2/input/taxonomy_GTDB207.txt" # Same input as in Step 2
+taxonomic_file_phylotree: "../Step2/input/phylotree_GTDB207.tree" # Same input as in Step 2
+taxonomic_parameter_ranks: "Phylum,Class,Order,Family,Genus,Species"
+
+# =================== Outputs =====================
+outdir: "./Results_beta"
+
+# =================== Executables =================
+gcta_exec: "gcta64"
+plink_exec: "plink"
+
+# =================== Trait selection =============
+trait: "Beta"
+genera: ["PD_PC1"]
+genus_trait_prefix:  "beta__"   # genus-level residuals column prefix in RData
+species_trait_prefix: "beta__"  # species-level residuals column prefix in RData
+
+# ========== Variant QC thresholds (assoc/set tests) ===
+maf_min: 0.02
+miss_max: 0.10
+mac_min: 5
+hwe_p_min: 1.0e-6
+hwe_maf_min: 0.05
+
+# ====== Reproducibility ======
+seed: 17
+
+# ====== Gene windows (bp) for candidate mapping ======
+candidate_window_up:   0
+candidate_window_down: 0
+
+# ========== Set tests (GENESIS::assocTestAggregate) ==========
+set_test: "SKATO"
+var_block: 500
+
+# ========== ACAT combine species -> genus ==========
+acat_weight: "h2"
+acat_p_floor: 1.0e-15
+q_gene: 0.10
+
+# ========== Crossfit sentinel picking ==========
+kfolds: 5
+crossfit_seed: 17
+
+# ========== Sentinels for correlations ==========
+sentinel_ld_r2: 0.10
+sentinel_ld_kb: 250
+sentinel_p1: 1.0
+sentinel_p2: 1.0
+min_species: 6
+
+# ====== Mediation analysis ======
+mediation_enable: true
+med_bh_q: 0.10                 # BH q-threshold inside fold
+med_gate_from_pgls_q: 0.10     # gate sentinels using PGLS q (usually = q_gene)
+
+med_glucose_column: "Glucose"
+med_bmi_column: "BMI"
+med_beta_trait_name: "beta__PD_PC1"
+med_alpha_trait_name: "alpha__PD_q2"
+med_guild3_trait_name: "cluster__3"   # <-- aligned name (was med_cluster_trait_name)
+outcomes: "alpha,bmi,glucose"
+
+# ====== MR toggles (used by simple IVW step) ======
+mr_enable: true
+mr_fdr_level: 0.10
+
+# (Optional / currently unused in main.nf but fine to keep for future)
+mr_mode: "crossfit"
+mr_ld_prune: true
+mr_ld_kb: 250
+mr_ld_r2: 0.10
+mr_fstat_min: 10.0
+mr_do_steiger: true
+mr_bh_q: 0.10
+
+# ================ Containers =====================
+container_bioconductor: "docker://morillofe/microbiome_geno_bioconductor:step4_v4"
+container_plink:        "docker://quay.io/biocontainers/plink:1.90b6.21--h779adbc_1"
+container_gcta:         "docker://morillofe/microbiome_geno_gcta:step4_v1"
+container_python:       "docker://morillofe/python-ps:3.11-slim"
+container_genesis:      "/users/abaud/fmorillo/singularity_containers/genesis-nf_bioc3.18-ext.v4.sif"
