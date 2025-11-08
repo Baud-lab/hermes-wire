@@ -13,8 +13,6 @@
 2) **Builds matrices** of **functions × species** (from all species represented in the FASTAs).  
 3) **Tests phylogeny-aware enrichment** (PGLS) of functions in **high- vs low-heritability** species using the GTDB taxonomy, phylogenetic tree and Step-2 heritability results.
 
-> ℹ️ CAZy: The core pipeline here **does not run dbCAN2** itself. If you want CAZy, annotate externally (e.g. with `run_dbcan`) and ensure the parsed tables are available for `make_func_matrices.R` to ingest. See “Optional: CAZy” below.
-
 ---
 
 ## ⚙️ What this pipeline actually runs
@@ -126,13 +124,6 @@ Results/
 
 ---
 
-## 🧪 Notes on function spaces
-
-* **eggNOG-mapper** supplies COG/ENOG, KEGG KO, EC, PFAM.
-* **CAZy** requires external annotation (e.g., `run_dbcan`) or a curated mapping layer. If you include CAZy in `functions` but don’t supply CAZy hits, those slots will be empty.
-
----
-
 ## 🌳 Phylogeny-aware enrichment (PGLS)
 
 If you provide:
@@ -189,6 +180,10 @@ run_dbcan proteins/<species>.faa protein --out_dir cazy_out/<species> --cpu 8
 ```
 
 Parse/aggregate dbCAN outputs and ensure `make_func_matrices.R` sees them (e.g., place compatible TSVs into the annotation folder the script ingests). See dbCAN2 docs for usage details.
+
+---
+
+⚠️ **Attention point:** The results reported on the thesis: <i>Host genetics shapes mucin niche colonisation by keystone gut bacteria, influencing metabolic health</i> (Dias, FMS; 2025 - <b>Yet to be published</b>) were obtained by using the codes on the `bin` folder separately. The Nextflow pipeline available here was not tested yet. Please, let us know if you found any problems trying to run it.
 
 ---
 
