@@ -1,0 +1,34 @@
+# Parameters of the HERMES-WIRE Step 3 Pipeline
+
+## STEP 3: Functional enrichment of bacterial species with high- and low-heritability values
+
+# Outputs
+outdir: ./Results
+
+# FASTA files
+input_faa_glob: ../extra_codes/Step1/input/gtdb207_demo/*.faa # The same protein FASTA files used in the Step1 extra codes can be used here as an example
+
+# Other inputs
+taxonomy_tsv: ../Step2/input/taxonomy_GTDB207.txt # Same input as in Step2
+phylo_tree:    ../Step2/input/phylotree_GTDB207.tree # Same input as in Step2
+herit_rdata:   ../Step2/Results_Taxonomic/Heritability/heritability.RData # Results from Step2 based on taxonomic profiling
+cog_def_tab:   ./input/cog-24.def.tab
+
+# Annotation stage main parameters
+threads: 8
+emapper_mode: diamond
+
+# Which function spaces to build (comma-separated)
+functions: "eggNOG_OGs,CAZy,EC,KEGG_ko,KEGG_Module,KEGG_Pathway,PFAMs,COG_category,COG_pathway"
+
+# PGLS-based enrichment test
+subset_id: ALL
+method: Shallow
+report_model: ML               # or AIC
+branchlen_transform: none      # or grafen
+groups: "g__Prevotella,g__Bacteroides"
+
+# Containers (optional)
+container_emapper: ""          # e.g. docker://eggnogmapper/emapper:2.1.12
+container_R: ""                # e.g. docker://morillofe/genesis-nf:bioc3.18-ext.v2
+
