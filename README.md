@@ -25,7 +25,7 @@
 <b>HERMES-WIRE</b> consists of **four modular steps**, each of which can be run independently or sequentially.  
 Together they provide a full *host–microbiome systems genetics* framework — from raw reads to host–microbiome causal inference.
 
-This work forms part of the PhD thesis <i>Host genetics shapes mucin niche colonisation by keystone gut bacteria, influencing metabolic health</i> by <b>Felipe Morillo Sanz Dias</b> (submitted November 2025), conducted at the Centre for Genomic Regulation (CRG), Department of Systems and Synthetic Biology, and the Universitat Pompeu Fabra (UPF), Department of Medicine and Life Sciences, under the supervision of Dr. Amelie Baud. The thesis is currently under evaluation and yet to be published.
+This work forms part of the PhD thesis <i>Host genetics shapes mucin niche colonisation by keystone gut bacteria, influencing metabolic health</i> by <b>Felipe Morillo Sanz Dias</b> (submitted November 2025), which was conducted at the Centre for Genomic Regulation (CRG), Department of Systems and Synthetic Biology / Universitat Pompeu Fabra (UPF), Department of Medicine and Life Sciences, under the supervision of Dr. Amelie Baud. The thesis is currently under evaluation and yet to be published.
 Users are kindly invited to report any issues encountered when running the pipeline.
 
 ---
