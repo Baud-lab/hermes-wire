@@ -1,4 +1,4 @@
-# 🧬 HERMES-WIRE — Step 3: Genome functional annotation → function×species matrices → phylogeny-aware enrichment
+# 🧬 HERMES-WIRE — Step 3: Functional enrichment of bacterial species with high- and low-heritability values
 
 **Centre for Genomic Regulation (CRG), Barcelona — 2025**  
 **Authors:** Felipe Morillo Sanz Dias, Luca Cozzuto, Hélène Tonnele, Amelie Baud
