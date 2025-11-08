@@ -141,8 +141,8 @@ nextflow run main.nf -params-file parameters/params_prev.yaml -resume
 
 ## 🧩 <b>Acknowledgements</b>
 
-Developed under the <b>Baud Lab</b> at the <b>Centre for Genomic Regulation (CRG)</b> and <b>Universitat Pompeu Fabra (UPF)</b>, Barcelona.
-We acknowledge support from the <b>Bioinformatics Core Facility</b> and the <b>CRG Scientific IT team</b>.
+Developed under the <b>[Baud Lab](https://www.crg.eu/en/programmes-groups/baud-lab)</b> at the <b>[Centre for Genomic Regulation (CRG)](https://www.crg.eu)</b> and <b>[Universitat Pompeu Fabra (UPF)](https://www.upf.edu)</b>, Barcelona.
+We acknowledge support from the <b>[Bioinformatics Core Facility](https://www.crg.eu/ca/programmes-groups/bioinformatics-unit)</b> and the <b>CRG [Scientific IT team](https://www.crg.eu/en/content/about-us-administration/scientific-information-technologies)</b>. Furthermore, the data used and tested for the development of this tool was generated in collaboration with <b>[NIDA](https://ratgenes.org)</b> and the <b>[Center for Microbiome Innovation](https://cmi.ucsd.edu)</b>, with the support of <b>[La Caixa Foundation](https://lacaixafoundation.org/en/)</b>.
 
 ---
 
@@ -160,5 +160,6 @@ We acknowledge support from the <b>Bioinformatics Core Facility</b> and the <b>C
 Distributed under the <b>MIT License</b>.
 
 ---
+
 
 
