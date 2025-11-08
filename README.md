@@ -180,7 +180,7 @@ Tower provides real-time monitoring, job tracing, and report visualisation.
 ## 🧩 <b>Acknowledgements</b>
 
 Developed under the <b>Baud Lab</b> at the <b>Centre for Genomic Regulation (CRG)</b> and <b>Universitat Pompeu Fabra (UPF)</b>, Barcelona.
-We acknowledge support from the <b>Bioinformatics Core Facility</b> and the <b>CRG HPC team</b>.
+We acknowledge support from the <b>Bioinformatics Core Facility</b> and the <b>CRG Scientific IT team</b>.
 
 ---
 
