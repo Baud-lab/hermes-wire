@@ -6,8 +6,9 @@ Run this code using the command line:
 ```
 Rscript characterization_heritable.R \
   --input_tsv filtered_VCs.tsv \
-  --outpdf ~/paper_figures/heritable_characteristics.pdf \
+  --outpdf ../Results/characterization_heritable.pdf \
   --subset_id "Full cohort"
 ```
 
 Furthermore, in `code/not_reviewed` you find extra codes generated for thesis <i>Host genetics shapes mucin niche colonisation by keystone gut bacteria, influencing metabolic health</i> (Dias, FMS; 2025 - <b>Yet to be published</b>) that are being revised in order to be in their best sharable versions.  
+
