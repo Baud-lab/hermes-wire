@@ -1,7 +1,7 @@
 # 🧬 HERMES-WIRE — Step 3: Functional enrichment of bacterial species with high- and low-heritability values
 
 **Centre for Genomic Regulation (CRG), Barcelona — 2025**  
-**Authors:** Felipe Morillo Sanz Dias, Luca Cozzuto, Hélène Tonnele, Amelie Baud
+<b>Authors:</b> Felipe Morillo Sanz Dias, Dr Luca Cozzuto, Dr Hélène Tonnelé, Dr Amelie Baud
 
 ---
 
@@ -183,7 +183,7 @@ We acknowledge support from the <b>[Bioinformatics Core Facility](https://www.cr
 
 ## 🧠 <b>Citation</b>
 
-> Morillo FMSD, Cozzuto L, Tonnele H, Baud A (2025). <i>HERMES-WIRE: HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects.</i>
+> Morillo FMSD, Cozzuto L, Tonnelé H, Baud A (2025). <i>HERMES-WIRE: HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects.</i>
 > Centre for Genomic Regulation (CRG), Barcelona.
 > [https://github.com/Baud-lab/hermes-wire](https://github.com/Baud-lab/hermes-wire)
 
