@@ -141,13 +141,7 @@ Results_Step1/
 
 ---
 
-## <b>🧠 Citation</b>
-
-If you use this workflow or its pre-computed indices, please cite:
-
-> Morillo FMSD, Cozzuto L, Tonnelé H, Baud A (2025). <i>HERMES-WIRE: HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects.</i>
-> Centre for Genomic Regulation (CRG), Barcelona.
-> [https://github.com/Baud-lab/hermes-wire](https://github.com/Baud-lab/hermes-wire)
+⚠️ **Attention point:** The results reported on the thesis: <i>Host genetics shapes mucin niche colonisation by keystone gut bacteria, influencing metabolic health</i> (Dias, FMS; 2025 - <b>Yet to be published</b>) were obtained by using the codes on the `bin` folder separately. The Nextflow pipeline available here was not tested yet. Please, let us know if you found any problems trying to run it.
 
 ---
 
@@ -158,12 +152,23 @@ We acknowledge support from the <b>[Bioinformatics Core Facility](https://www.cr
 
 ---
 
+## <b>🧠 Citation</b>
+
+If you use this workflow or its pre-computed indices, please cite:
+
+> Morillo FMSD, Cozzuto L, Tonnelé H, Baud A (2025). <i>HERMES-WIRE: HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects.</i>
+> Centre for Genomic Regulation (CRG), Barcelona.
+> [https://github.com/Baud-lab/hermes-wire](https://github.com/Baud-lab/hermes-wire)
+
+---
+
 ## 🧾 <b>License</b>
 
 © 2025 Centre for Genomic Regulation (CRG) and the authors.
 Distributed under the <b>[Apache License 2.0](https://github.com/Baud-lab/hermes-wire/blob/main/LICENSE)</b>.
 
 ---
+
 
 
 
