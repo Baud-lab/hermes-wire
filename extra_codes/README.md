@@ -1,3 +1,4 @@
 # Extra codes
 
-The extra codes included here were not included in the pipelines, but can be used as references for the generation of inputs, such as the indices for the metagenomic alignment with refeence catalogues, or posterior analyses involving multiple outputs. 
+The extra codes included here are not part of the pipelines, but can be used for the generation of some of its inputs, such as the index for the metagenomic alignment with GTDB/Kaiju in Step1, or posterior analyses resulting in multiple outputs, auch as plots or tables. 
+
