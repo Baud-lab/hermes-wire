@@ -16,7 +16,7 @@
 <i>A modular Nextflow suite combining quantitative genetics with systems biology to decode how host polygenic variation wires gut microbial communities and impacts metabolic health.</i>
 
 <b>Centre for Genomic Regulation (CRG), Barcelona — 2025</b><br>
-<b>Authors:</b> Felipe Morillo Sanz Dias, Luca Cozzuto, Hélène Tonnele, Amelie Baud  
+<b>Authors:</b> Felipe Morillo Sanz Dias, Dr Luca Cozzuto, Dr Hélène Tonnelé, Dr Amelie Baud  
 
 ---
 
@@ -25,7 +25,7 @@
 <b>HERMES-WIRE</b> consists of **four modular steps**, each of which can be run independently or sequentially.  
 Together they provide a full *host–microbiome systems genetics* framework — from raw reads to host–microbiome causal inference.
 
-This work forms part of the PhD thesis <i>Host genetics shapes mucin niche colonisation by keystone gut bacteria, influencing metabolic health</i> by <b>Felipe Morillo Sanz Dias</b> (submitted November 2025), which was conducted at the Centre for Genomic Regulation (CRG), Department of Systems and Synthetic Biology / Universitat Pompeu Fabra (UPF), Department of Medicine and Life Sciences, under the supervision of Dr. Amelie Baud. The thesis is currently under evaluation and yet to be published.
+This work forms part of the PhD thesis <i>Host genetics shapes mucin niche colonisation by keystone gut bacteria, influencing metabolic health</i> by <b>Felipe Morillo Sanz Dias</b> (submitted November 2025), which was conducted at the Centre for Genomic Regulation (CRG), Department of Systems and Synthetic Biology / Universitat Pompeu Fabra (UPF), Department of Medicine and Life Sciences, with inputs of Dr Amelie Baud. The thesis is currently under evaluation and yet to be published.
 Users are kindly invited to report any issues encountered when running the pipeline and/or report missing parts for the total reproduction of the results reported on the thesis.
 
 ---
@@ -182,7 +182,7 @@ Tower provides real-time monitoring, job tracing, and report visualisation.
 
 ## 🧩 <b>Acknowledgements</b>
 
-Developed under the <b>[Baud Lab](https://www.crg.eu/en/programmes-groups/baud-lab)</b> at the <b>[Centre for Genomic Regulation (CRG)](https://www.crg.eu)</b> and <b>[Universitat Pompeu Fabra (UPF)](https://www.upf.edu)</b>, Barcelona.
+Developed in the <b>[Baud Lab](https://www.crg.eu/en/programmes-groups/baud-lab)</b> at the <b>[Centre for Genomic Regulation (CRG)](https://www.crg.eu)</b> and <b>[Universitat Pompeu Fabra (UPF)](https://www.upf.edu)</b>, Barcelona.
 We acknowledge support from the <b>[Bioinformatics Core Facility](https://www.crg.eu/ca/programmes-groups/bioinformatics-unit)</b> and the <b>CRG [Scientific IT team](https://www.crg.eu/en/content/about-us-administration/scientific-information-technologies)</b>. Furthermore, the data used and tested for the development of this tool was generated in collaboration with <b>[NIDA](https://ratgenes.org)</b> and the <b>[Center for Microbiome Innovation](https://cmi.ucsd.edu)</b>. The project received the support of <b>[La Caixa Foundation](https://lacaixafoundation.org/en/)</b>.
 
 ---
