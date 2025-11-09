@@ -139,6 +139,12 @@ nextflow run main.nf -params-file parameters/params_prev.yaml -resume
 
 ---
 
+---
+
+⚠️ **Attention point:** The results reported on the thesis: <i>Host genetics shapes mucin niche colonisation by keystone gut bacteria, influencing metabolic health</i> (Dias, FMS; 2025 - <b>Yet to be published</b>) were obtained by using the codes on the `bin` folder separately. The Nextflow pipeline available here was not tested yet. Please, let us know if you found any problems trying to run it.
+
+---
+
 ## 🧩 <b>Acknowledgements</b>
 
 Developed under the <b>[Baud Lab](https://www.crg.eu/en/programmes-groups/baud-lab)</b> at the <b>[Centre for Genomic Regulation (CRG)](https://www.crg.eu)</b> and <b>[Universitat Pompeu Fabra (UPF)](https://www.upf.edu)</b>, Barcelona.
@@ -146,7 +152,9 @@ We acknowledge support from the <b>[Bioinformatics Core Facility](https://www.cr
 
 ---
 
-## 🧠 <b>Citation</b>
+## <b>🧠 Citation</b>
+
+If you use this workflow or its pre-computed indices, please cite:
 
 > Morillo FMSD, Cozzuto L, Tonnelé H, Baud A (2025). <i>HERMES-WIRE: HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects.</i>
 > Centre for Genomic Regulation (CRG), Barcelona.
@@ -158,12 +166,3 @@ We acknowledge support from the <b>[Bioinformatics Core Facility](https://www.cr
 
 © 2025 Centre for Genomic Regulation (CRG) and the authors.
 Distributed under the <b>[Apache License 2.0](https://github.com/Baud-lab/hermes-wire/blob/main/LICENSE)</b>.
-
----
-
-
-
-
-
-
-
