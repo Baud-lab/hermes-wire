@@ -139,9 +139,7 @@ nextflow run main.nf -params-file parameters/params_prev.yaml -resume
 
 ---
 
----
-
-⚠️ **Attention point:** The results reported on the thesis: <i>Host genetics shapes mucin niche colonisation by keystone gut bacteria, influencing metabolic health</i> (Dias, FMS; 2025 - <b>Yet to be published</b>) were obtained by using the codes on the `bin` folder separately. The Nextflow pipeline available here was not tested yet. Please, let us know if you found any problems trying to run it.
+✅ **Validation:** The results reported on the thesis: <i>Host genetics shapes mucin niche colonisation by keystone gut bacteria, influencing metabolic health</i> (Dias, FMS; 2025 - <b>Yet to be published</b>) were already obtained by using the full Nextflow pipeline. Please, let us know if you found any problems trying to run it or if you miss something that you cannot find here on in the extra-codes that you consider necessary to replicate the results of the thesis.
 
 ---
 
@@ -166,3 +164,4 @@ If you use this workflow or its pre-computed indices, please cite:
 
 © 2025 Centre for Genomic Regulation (CRG) and the authors.
 Distributed under the <b>[Apache License 2.0](https://github.com/Baud-lab/hermes-wire/blob/main/LICENSE)</b>.
+
