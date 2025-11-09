@@ -1,7 +1,7 @@
 # 🧬 HERMES-WIRE — Step 1: Data Pre-processing and Microbiome Profiling
 
 <b>Centre for Genomic Regulation (CRG), Barcelona — 2025</b>  
-<b>Authors:</b> Felipe Morillo Sanz Dias, Luca Cozzuto, Hélène Tonnele, Amelie Baud  
+<b>Authors:</b> Felipe Morillo Sanz Dias, Dr Luca Cozzuto, Dr Hélène Tonnelé, Dr Amelie Baud  
 
 ---
 
@@ -145,7 +145,7 @@ Results_Step1/
 
 If you use this workflow or its pre-computed indices, please cite:
 
-> Morillo FMSD, Cozzuto L, Tonnele H, Baud A (2025). <i>HERMES-WIRE: HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects.</i>
+> Morillo FMSD, Cozzuto L, Tonnelé H, Baud A (2025). <i>HERMES-WIRE: HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects.</i>
 > Centre for Genomic Regulation (CRG), Barcelona.
 > [https://github.com/Baud-lab/hermes-wire](https://github.com/Baud-lab/hermes-wire)
 
@@ -164,6 +164,7 @@ We acknowledge support from the <b>[Bioinformatics Core Facility](https://www.cr
 Distributed under the <b>[Apache License 2.0](https://github.com/Baud-lab/hermes-wire/blob/main/LICENSE)</b>.
 
 ---
+
 
 
 
