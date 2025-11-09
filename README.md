@@ -13,7 +13,7 @@
   <img src="assets/hermes-wire-logo.png" alt="HERMES-WIRE logo: Hermes with DNA and gut bacteria" width="320">
 </p>
 
-<i>A modular Nextflow suite combining quantitative genetics with systems biology to decode how host polygenic variation wires gut microbial communities and impacts metabolic health.</i>
+<i>Named after Hermes, the Greek messenger of the gods, HERMES-WIRE tracks how information flows from multiple host genes to gut microbiome assembly, facilitating the interpretation of how they affect each other. It consists of a modular Nextflow suite combining quantitative genetics with systems biology approaches, revealing how host polygenic variation functionally wires gut microbial communities with impacts in metabolic health.</i>
 
 <b>Centre for Genomic Regulation (CRG), Barcelona — 2025</b><br>
 <b>Authors:</b> Felipe Morillo Sanz Dias, Dr Luca Cozzuto, Dr Hélène Tonnelé, Dr Amelie Baud  
@@ -189,7 +189,7 @@ We acknowledge support from the <b>[Bioinformatics Core Facility](https://www.cr
 
 ## 🧠 <b>Citation</b>
 
-> Morillo FMSD, Cozzuto L, Tonnele H, Baud A (2025). <i>HERMES-WIRE: HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects.</i>
+> Morillo FMSD, Cozzuto L, Tonnelé H, Baud A (2025). <i>HERMES-WIRE: HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects.</i>
 > Centre for Genomic Regulation (CRG), Barcelona.
 > [https://github.com/Baud-lab/hermes-wire](https://github.com/Baud-lab/hermes-wire)
 
