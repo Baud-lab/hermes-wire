@@ -1,7 +1,7 @@
 # 🧬 HERMES-WIRE — Step 2: Profile Matrix Processing and Analyses
 
 <b>Centre for Genomic Regulation (CRG), Barcelona — 2025</b>  
-<b>Authors:</b> Felipe Morillo Sanz Dias, Luca Cozzuto, Hélène Tonnele, Amelie Baud  
+<b>Authors:</b> Felipe Morillo Sanz Dias, Dr Luca Cozzuto, Dr Hélène Tonnelé, Dr Amelie Baud  
 
 ---
 
@@ -138,7 +138,7 @@ Results_*/
 
 If you use this module or its outputs, please cite:
 
-> **Morillo FMSD, Cozzuto L, Tonnele H, Baud A (2025)**
+> **Morillo FMSD, Cozzuto L, Tonnelé H, Baud A (2025)**
 > *HERMES-WIRE: HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects*
 > Centre for Genomic Regulation (CRG), Barcelona.
 > [https://github.com/Baud-lab/hermes-wire](https://github.com/Baud-lab/hermes-wire)
@@ -158,6 +158,7 @@ We acknowledge support from the <b>[Bioinformatics Core Facility](https://www.cr
 Distributed under the <b>[Apache License 2.0](https://github.com/Baud-lab/hermes-wire/blob/main/LICENSE)</b>.
 
 ---
+
 
 
 
