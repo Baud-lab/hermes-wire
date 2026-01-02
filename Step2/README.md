@@ -64,7 +64,7 @@ The pipeline depends on a big HDF5 file hosted on <b>Zenodo</b>:
 
 | File type | Contents                                                                     | Zenodo link                                                                |
 | -------------- | ------------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| **HDF5**  | GRM and Gwnotypes (`P50_rats_Rn7.h5`)                        | [[https://zenodo.org/uploads/17545483](https://zenodo.org/records/17546688)] |
+| **HDF5**  | GRM and Genotypes (`P50_rats_Rn7.h5`)                        | [[https://zenodo.org/uploads/17545483](https://zenodo.org/records/17546688)] |
 
 Download and extract the archive into `input/` using commands ```wget``` and ```tar -xvzf```, respectivelly.
 
@@ -159,6 +159,7 @@ If you use this workflow or its pre-computed indices, please cite:
 
 © 2025 Centre for Genomic Regulation (CRG) and the authors.
 Distributed under the <b>[Apache License 2.0](https://github.com/Baud-lab/hermes-wire/blob/main/LICENSE)</b>.
+
 
 
 
