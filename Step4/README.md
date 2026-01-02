@@ -12,7 +12,6 @@
 - **Candidate host genomic windows**
 - **Cross-validated sentinel selection**
 - **Mediation and Mendelian Randomization (MR) analyses**
-- **Host–microbiome genetic correlation and BLUP estimation**
 
 It bridges host quantitative-genetic signals with microbial community traits to identify **functional genetic mediators**, **crypt-colonisation effects**, and **metabolic outcome pathways**.
 
@@ -28,7 +27,6 @@ It bridges host quantitative-genetic signals with microbial community traits to 
 | **6–7** | Compute out-of-fold (OOF) species betas, meta-analyze across folds, and correlate β with heritability (PGLS). | `phase6_*`, `phase7_pgls` |
 | **8** | Integrate PGLS results and synthesize per-genus gene selection for mediation. | `phase8_synthesis_simple` |
 | **9** | Perform mediation / MR meta-analysis across folds, producing causal chains and significant IV sets. | `phase9_mediation` |
-| **Optional** | Estimate host–microbiome genetic correlations and polygenic scores (RG / BLUP / cvBLUP). | `rg_*`, `cvblup_*` |
 
 ---
 
@@ -109,20 +107,17 @@ nextflow run main.nf -params-file parameters/params_prev.yaml -resume
 * **Mediation / MR:**
   Estimate direct, indirect, and total effects from host genes → microbiome → metabolic traits.
 
-* **Genetic correlation / BLUP (optional):**
-  Evaluate polygenic covariance between microbial and metabolic phenotypes.
-
 ---
 
 ## 🧬 Example Runs
 
 | Trait           | YAML                           | Description                                                |
 | :-------------- | :----------------------------- | :--------------------------------------------------------- |
-| **Prevotella**  | `parameters/params_prev.yaml`  | Full causal analysis for *Prevotella* species              |
-| **Bacteroides** | `parameters/params_bac.yaml`   | Includes genetic correlation + BLUP estimation             |
-| **α-diversity** | `parameters/params_alpha.yaml` | Mediation using PD q2 as microbial trait                   |
-| **β-diversity** | `parameters/params_beta.yaml`  | Mediation using PCoA1                                      |
-| **Guild 3**     | `parameters/params_guild.yaml` | Host–guild interactions (Prevotella + Bacteroides cluster) |
+| **Prevotella**  | `parameters/params_prev.yaml`  | Causal analysis for the *Prevotella* genus                 |
+| **Bacteroides** | `parameters/params_bac.yaml`   | Causal analysis for the *Bacteroides* genus                |
+| **α-diversity** | `parameters/params_alpha.yaml` | Causal analysis for phylogenetic diversity                 |
+| **β-diversity** | `parameters/params_beta.yaml`  | Causal analysis for beta diversity PCoA1                   |
+| **Guild 3**     | `parameters/params_guild.yaml` | Causal analysis for a bacterial species guild              |
 
 ---
 
@@ -135,7 +130,6 @@ nextflow run main.nf -params-file parameters/params_prev.yaml -resume
 | `phase7_pgls/`             | `correlations_by_gene__*.tsv`                    | PGLS β–h² correlations                               |
 | `phase8_synthesis_simple/` | `selected_genes.RData`                           | Significant host genes for mediation                 |
 | `phase9_mediation/`        | `mediation_meta__*.tsv`, `mediation_sig_iv.tsv`  | Meta-Mediation & IV results                          |
-| `rg_* / cvblup_*`          | GREML / BLUP summaries                           | (optional) genetic correlation and effect prediction |
 
 ---
 
@@ -166,6 +160,7 @@ If you use this workflow or its pre-computed indices, please cite:
 
 © 2025 Centre for Genomic Regulation (CRG) and the authors.
 Distributed under the <b>[Apache License 2.0](https://github.com/Baud-lab/hermes-wire/blob/main/LICENSE)</b>.
+
 
 
 
