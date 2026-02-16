@@ -1,7 +1,7 @@
 # 🧬 HERMES-WIRE — Step 3: Functional enrichment of bacterial species with high- and low-heritability values
 
 **Centre for Genomic Regulation (CRG), Barcelona — 2025**  
-<b>Authors:</b> Felipe Morillo Sanz Dias, Dr Luca Cozzuto, Dr Hélène Tonnelé, Dr Amelie Baud
+<b>Authors:</b> Dr Felipe Morillo Sanz Dias, Dr Luca Cozzuto, Dr Hélène Tonnelé, Dr Amelie Baud
 
 ---
 
@@ -172,7 +172,9 @@ Then set `input_faa_glob: ./proteins/*.faa` in `params.yaml` and run Step 3.
 
 ## ⚠️ **Validation (Attention point):**
 
-The results reported on the thesis: <i>Host genetics shapes mucin niche colonisation by keystone gut bacteria, influencing metabolic health</i> (Dias, FMS; 2025 - <b>Yet to be published</b>) were obtained by using the codes on the `bin` folder separately. The Nextflow pipeline available here was not tested yet. Please, let us know if you found any problems trying to run it.
+The results reported on the thesis: <i>Host genetics shapes mucin niche colonisation by keystone gut bacteria, influencing metabolic health</i> (Dias, FMS; 2026) were obtained by using the codes on the `bin` folder separately. The Nextflow pipeline available here was not tested yet. Please, let us know if you found any problems trying to run it.
+
+<b>Citation:</b> Morillo Sanz Dias, F. (2026). Host genetics shapes crypt niche colonisation by keystone gut bacteria, influencing metabolic health. Zenodo. https://doi.org/10.5281/zenodo.18663497
 
 ---
 
