@@ -1,7 +1,7 @@
 # 🧬 HERMES-WIRE — Step 2: Profile Matrix Processing and Analyses
 
 <b>Centre for Genomic Regulation (CRG), Barcelona — 2025</b>  
-<b>Authors:</b> Felipe Morillo Sanz Dias, Dr Luca Cozzuto, Dr Hélène Tonnelé, Dr Amelie Baud  
+<b>Authors:</b> Dr Felipe Morillo Sanz Dias, Dr Luca Cozzuto, Dr Hélène Tonnelé, Dr Amelie Baud  
 
 ---
 
@@ -161,6 +161,7 @@ If you use this workflow or its pre-computed indices, please cite:
 
 © 2025 Centre for Genomic Regulation (CRG) and the authors.
 Distributed under the <b>[Apache License 2.0](https://github.com/Baud-lab/hermes-wire/blob/main/LICENSE)</b>.
+
 
 
 
