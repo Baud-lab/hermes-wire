@@ -134,7 +134,9 @@ Results_*/
 
 ## ✅ **Validation:**
 
-The results reported on the thesis: <i>Host genetics shapes mucin niche colonisation by keystone gut bacteria, influencing metabolic health</i> (Dias, FMS; 2025 - <b>Yet to be published</b>) were already obtained by using the full Nextflow pipeline. Please, let us know if you found any problems trying to run it or if you miss something that you cannot find here on in the extra-codes that you consider necessary to replicate the results of the thesis.
+The results reported on the thesis: <i>Host genetics shapes mucin niche colonisation by keystone gut bacteria, influencing metabolic health</i> (Dias, FMS; 2026) were already obtained by using the full Nextflow pipeline. Please, let us know if you found any problems trying to run it or if you miss something that you cannot find here on in the extra-codes that you consider necessary to replicate the results of the thesis.
+
+<b>Citation:</b> Morillo Sanz Dias, F. (2026). Host genetics shapes crypt niche colonisation by keystone gut bacteria, influencing metabolic health. Zenodo. https://doi.org/10.5281/zenodo.18663497
 
 ---
 
@@ -159,6 +161,7 @@ If you use this workflow or its pre-computed indices, please cite:
 
 © 2025 Centre for Genomic Regulation (CRG) and the authors.
 Distributed under the <b>[Apache License 2.0](https://github.com/Baud-lab/hermes-wire/blob/main/LICENSE)</b>.
+
 
 
 
