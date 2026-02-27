@@ -110,7 +110,7 @@ You can monitor execution on **Nextflow Tower** by adding `-with-tower`.
 | **Clusters (UMAP + HDBSCAN)**   | Identify guilds / clusters based on co-abundance structure             | umap-learn, hdbscan, R     |
 | **Enterotypes**                 | Define enterotypes (k-means clustering on residualized data)           | R (kmeans)                 |
 | **Networks**                    | Build and analyze co-abundance networks (modules, hubs)                | R (igraph, WGCNA, NetCoMi) |
-| **Alpha/Beta Diversity**        | Shannon, Simpson, Hill numbers and PCoA based metrics                  | vegan, phyloseq            |
+| **Alpha/Beta Diversity**        | Neutral of phylogenetic with Hill numbers and PCoA based metrics       | vegan, phyloseq            |
 | **Heritability**                | Host genetic variance partition using GCTA-style LMM                   | LIMIX, custom R            |
 
 ---
@@ -159,6 +159,7 @@ We acknowledge support from the <b>[Bioinformatics Core Facility](https://www.cr
 
 © 2025 Centre for Genomic Regulation (CRG) and the authors.
 Distributed under the <b>[Apache License 2.0](https://github.com/Baud-lab/hermes-wire/blob/main/LICENSE)</b>.
+
 
 
 
