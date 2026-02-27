@@ -1,0 +1,59 @@
+{
+  "title": "Baud-lab/hermes-wire",
+  "upload_type": "software",
+  "version": "v1.0",
+  "access_right": "open",
+  "license": "Apache-2.0",
+  "language": "eng",
+  "creators": [
+    {
+      "name": "Morillo Sanz Dias, Felipe",
+      "orcid": "0000-0001-5232-4312",
+      "affiliation": "Centre for Genomic Regulation",
+      "type": "ContactPerson"
+    },
+    {
+      "name": "Tonnelé, Hélène",
+      "orcid": "0000-0001-6015-0471",
+      "affiliation": "Centre for Genomic Regulation",
+      "type": "ProjectMember"
+    },
+    {
+      "name": "Cozzuto, Luca",
+      "orcid": "0000-0003-3194-8892",
+      "affiliation": "Centre for Genomic Regulation",
+      "type": "ProjectMember"
+    },
+    {
+      "name": "Baud, Amelie",
+      "orcid": "0000-0003-2448-0283",
+      "affiliation": "Centre for Genomic Regulation",
+      "type": "Supervisor"
+    }
+  ],
+  "description": "Developed in the Baud Lab at the Centre for Genomic Regulation (CRG) and Universitat Pompeu Fabra (UPF), Barcelona. We acknowledge support from the Bioinformatics Core Facility and the CRG Scientific IT team.\n\nFurthermore, the data used and tested for the development of this tool was generated in collaboration with NIDA and the Center for Microbiome Innovation, being available on Qiita (Study 11479). The project received the support of La Caixa Foundation.\n\nThis is the first release, containing all necessary code to replicate the findings of the PhD thesis \"Host genetics shapes crypt niche colonisation by keystone gut bacteria, influencing metabolic health\".",
+  "keywords": [
+    "microbiome",
+    "host genetics",
+    "systems genetics",
+    "Nextflow",
+    "shallow shotgun metagenomics",
+    "heritability",
+    "QTL",
+    "reproducible workflows"
+  ],
+  "related_identifiers": [
+    {
+      "scheme": "doi",
+      "identifier": "10.5281/zenodo.18663497",
+      "relation": "isDerivedFrom",
+      "resource_type": "publication-thesis"
+    },
+    {
+      "scheme": "url",
+      "identifier": "https://github.com/Baud-lab/hermes-wire/tree/v1.0",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
+  ]
+}
