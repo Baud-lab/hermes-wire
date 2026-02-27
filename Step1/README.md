@@ -9,9 +9,7 @@
 
 <b>HERMES-WIRE Step 2</b> is the first stage of the <b>HERMES-WIRE</b> suite (<b>HER</b>itable <b>M</b>icrobiom<b>E</b> <b>S</b>tructure — <b>W</b>orkflow for <b>I</b>nterpreting host–microbiome <b>R</b>elationships &amp; <b>E</b>ffects).
 
-It performs read-level pre-processing and microbiome profiling from shallow-shotgun metagenomic sequencing data.
-
-This automated and reproducible Nextflow pipeline executes:
+It performs read-level pre-processing and microbiome profiling from shallow-shotgun metagenomic sequencing data. This automated and reproducible Nextflow pipeline executes:
 
 1. <b>Pre-processing</b> of raw reads (QC, trimming, host-read removal).  
 2. <b>Taxonomic profiling</b> using Kaiju and a GTDB-based protein index.  
@@ -169,6 +167,7 @@ We acknowledge support from the <b>[Bioinformatics Core Facility](https://www.cr
 
 © 2025 Centre for Genomic Regulation (CRG) and the authors.
 Distributed under the <b>[Apache License 2.0](https://github.com/Baud-lab/hermes-wire/blob/main/LICENSE)</b>.
+
 
 
 
