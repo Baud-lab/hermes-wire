@@ -7,6 +7,8 @@
 
 ## 📘 Overview
 
+HERMES-WIRE Step 3 is the third stage of the HERMES-WIRE suite (HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects).
+
 **Step 3** takes **protein FASTA** files (we used **GTDB r207 proteins**) and:
 
 1) **Annotates** proteins with **eggNOG-mapper** (COG/ENOG, KEGG KO, EC, PFAM).  
