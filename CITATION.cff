@@ -1,0 +1,53 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata below."
+title: "Baud-lab/hermes-wire"
+type: software
+version: "v1.0"
+date-released: 2026-02-27
+doi: 10.5281/zenodo.18801939
+license: Apache-2.0
+repository-code: "https://github.com/Baud-lab/hermes-wire"
+url: "https://doi.org/10.5281/zenodo.18801939"
+authors:
+  - family-names: "Morillo Sanz Dias"
+    given-names: "Felipe"
+    orcid: "https://orcid.org/0000-0001-5232-4312"
+    affiliation: "Centre for Genomic Regulation (CRG)"
+  - family-names: "Tonnelé"
+    given-names: "Hélène"
+    orcid: "https://orcid.org/0000-0001-6015-0471"
+    affiliation: "Centre for Genomic Regulation (CRG)"
+  - family-names: "Cozzuto"
+    given-names: "Luca"
+    orcid: "https://orcid.org/0000-0003-3194-8892"
+    affiliation: "Centre for Genomic Regulation (CRG)"
+  - family-names: "Baud"
+    given-names: "Amelie"
+    orcid: "https://orcid.org/0000-0003-2448-0283"
+    affiliation: "Centre for Genomic Regulation (CRG)"
+abstract: >
+  Modular Nextflow suite developed in the Baud Lab (CRG/UPF, Barcelona) to reproduce
+  the findings of the PhD thesis "Host genetics shapes crypt niche colonisation by keystone gut bacteria,
+  influencing metabolic health."
+
+preferred-citation:
+  type: software
+  title: "Baud-lab/hermes-wire"
+  authors:
+    - family-names: "Morillo Sanz Dias"
+      given-names: "Felipe"
+      orcid: "https://orcid.org/0000-0001-5232-4312"
+    - family-names: "Tonnelé"
+      given-names: "Hélène"
+      orcid: "https://orcid.org/0000-0001-6015-0471"
+    - family-names: "Cozzuto"
+      given-names: "Luca"
+      orcid: "https://orcid.org/0000-0003-3194-8892"
+    - family-names: "Baud"
+      given-names: "Amelie"
+      orcid: "https://orcid.org/0000-0003-2448-0283"
+  version: "v1.0"
+  date-released: 2026-02-27
+  doi: 10.5281/zenodo.18801939
+  publisher: "Zenodo"
+  url: "https://doi.org/10.5281/zenodo.18801939"
