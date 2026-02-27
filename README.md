@@ -193,7 +193,7 @@ We acknowledge support from the <b>[Bioinformatics Core Facility](https://www.cr
 
 > Morillo FMSD, Cozzuto L, Tonnelé H, Baud A (2025). <i>HERMES-WIRE: HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects.</i>
 > Centre for Genomic Regulation (CRG), Barcelona.
-> [https://github.com/Baud-lab/hermes-wire](https://github.com/Baud-lab/hermes-wire)
+> [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.18801938.svg)](https://doi.org/10.5281/zenodo.18801938)
 
 ---
 
