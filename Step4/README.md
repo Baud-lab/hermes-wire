@@ -7,6 +7,8 @@
 
 ## 📘 Overview
 
+HERMES-WIRE Step 4 is the fourth stage of the HERMES-WIRE suite (HERitable MicrobiomE Structure — Workflow for Interpreting host–microbiome Relationships & Effects).
+
 **Step 4** of the **HERMES-WIRE** pipeline performs the final *genome-to-microbiome causal dissection* by integrating:
 - **Heritable microbiome traits** (taxa, guilds, α/β-diversity)  
 - **Candidate host genomic windows**
@@ -160,6 +162,7 @@ We acknowledge support from the <b>[Bioinformatics Core Facility](https://www.cr
 
 © 2025 Centre for Genomic Regulation (CRG) and the authors.
 Distributed under the <b>[Apache License 2.0](https://github.com/Baud-lab/hermes-wire/blob/main/LICENSE)</b>.
+
 
 
 
